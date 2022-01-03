@@ -1,0 +1,17 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://xmlns.jcp.org/xml/ns/javaee" >
+
+<web-app>
+	<servlet>
+		<servlet-name>SearchSongServlet</servlet-name>
+		<display-name>SearchSongServlet</display-name>
+		<description></description>
+		<servlet-class>com.webmusic.controller.SearchSongServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SearchSongServlet</servlet-name>
+		<url-pattern>/SearchSongServlet</url-pattern>
+	</servlet-mapping>
+
+</web-app>
