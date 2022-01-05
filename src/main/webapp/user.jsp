@@ -31,7 +31,10 @@
 %>
 <p id="user" >Welcome <%= uinfo.getFirstName() %></p>
 <a href ="Showsong.jsp">SongList</a><br><br>
-<a href ="AddPlaylist.jsp">Add Playlist</a>
+<a href ="AddPlaylist.jsp">Add Playlist</a><br><br>
+<a href ="Wallet.jsp">Recharge Wallet</a><br><br>
+<a href ="SwitchPremium.jsp">Switch to Premium</a><br><br>
+<a href ="UpdateUser.jsp">Update Details</a>
 <%		LibraryDao libraryDao = new   LibraryDao();
 		List<Library> objsonglist = (List<Library>)request.getAttribute("allSongs");
 		objsonglist=libraryDao.showAllSongs();

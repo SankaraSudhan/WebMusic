@@ -37,6 +37,7 @@ public class PlaylistDao {
 	public int findPlaylistId(String playListName)
 	{
 		String query="select id from playlist where playlist_Title='"+playListName+"'";
+//		String JoinPlaylist = "";
 		int playlistId=0;
 		try {
 			Connection con=ConnectionUtil.getDBconnect();
@@ -58,7 +59,7 @@ public class PlaylistDao {
 	 public List<Playlist> showAllPlaylist() 
      {
 	    List<Playlist> showPlaylist = new ArrayList<Playlist>();
-     String query ="select * from playlist";
+     String query ="select * from playlist where status='active'";
      Connection con=null;
      PreparedStatement stmt;
      try {
@@ -84,19 +85,29 @@ public class PlaylistDao {
 }
 	 
 	 // Delete playlist
-	 public void deletePlaylist(String playlistTitle, UserInfo user) throws ClassNotFoundException, SQLException {
-
-			String delete = "delete from playlist where playlist_title=? and email_id=? ";
-
+	 public boolean deletePlaylist(String playlistTitle,String user) throws ClassNotFoundException, SQLException {
+		 boolean flag=false;
+		 try {
+			String delete = "update playlist set status='"+"inActive"+"'  where playlist_title=? and email_id=? ";
+		
 			Connection con = ConnectionUtil.getDBconnect();
 
 			PreparedStatement stmt = con.prepareStatement(delete);
+			System.out.println(playlistTitle);
+			System.out.println(user);
 			stmt.setString(1, playlistTitle);
-            stmt.setString(2, user.getEmailId());
+			stmt.setString(2, user);
+           
 			int res = stmt.executeUpdate();
-			System.out.println(res + "is deleted");
+			System.out.println(res + "is updated");
+			flag= stmt.executeUpdate()>0;
 			stmt.close();
 			con.close();
+		 }catch(Exception e) {
+				e.getMessage();
+				System.out.println("something went wrong");
+			}
+			return flag;
 
 
 	}

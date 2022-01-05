@@ -1,4 +1,3 @@
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -55,51 +54,46 @@
 </head>
 <body>
 
-	<form action="registerweb">
+	<form action="UpdateSong">
     <fieldset class="signup">
-       <center><h2>Registeration</h2></center>
+       <center><h2>Update Song details here!</h2></center>
 
         <table id="signuptable" style="border-spacing: 5px;">
             <tr>
-                <th><label for="name">First Name:</label></th>
-                <th><input type="text" name="FirstName" id="name" placeholder="Enter your first name" pattern = "[a-zA-Z]+{3,30}" required autofocus></th>
+                <th><label for="id">Song Id:</label></th>
+                <th><input type="number" name="song_id" id="id" placeholder="Enter song id" required autofocus></th>
             </tr>
             <tr>
-                <th><label for="name">Last Name:</label></th>
-                <th><input type="text" name="LastName" id="name" placeholder="Enter your last name" pattern = "[a-zA-Z]+{3,30}" required ></th>
+                <th><label for="title">Song Title:</label></th>
+                <th><input type="text" name="song_title" id="title" placeholder="Enter song title" required autofocus></th>
             </tr>
            
             <tr>
-                <th><label for="emailId">Email Id:</label></th>
-                <th><input type="email" name="UserEmail" id="emailId" placeholder="Enter email Id" pattern = "[a-z0-9]+[@][a-z]+[.][a-z]+{2,5}" required ></th>
+                <th><label for="artist">Artists:</label></th>
+                <th><input type="text" name="artists" id="artist" placeholder="Enter artist"  required ></th>
             </tr>
            
                     
            <tr>
-                <th><label for="name">User Name:</label></th>
-                <th><input type="text" name="UserName" id="name" placeholder="Enter user name" pattern ="[a-z]+{2,20}" required ></th>
+                <th><label for="album">Album:</label></th>
+                <th><input type="text" name="album" id=""album"" placeholder="Enter album" required ></th>
             </tr>
             
                                   
             <tr>
-                <th><label for="password">Password:</label></th>
-                <th><input type="password" name="UserPassword" id="password" placeholder="********" pattern = "[a-zA-Z0-9@#]+{5,8}" required ></th>
+                <th><label for="genre">Genre:</label></th>
+                <th><input type="text" name="genre" id="genre" placeholder="Enter genre" required ></th>
             </tr>
            
             <tr>
-                <th><label for="role">Role:</label></th>
-                <th><input type="text" name="Role" id="name" placeholder="Enter role" pattern = "[a-zA-Z]+{2,20}"required ></th>
-            </tr>
-
-            <tr>
-                <th><label for="mobile">Mobile Number:</label></th>
-                <th><input type="number" name="MobileNumber" id="mobile" placeholder="Enter mobile number" pattern ="[0-9]+{10}" required></th>
+                <th><label for="language">Language:</label></th>
+                <th><input type="text" name="language" id="language" placeholder="Enter language" required></th>
             </tr>         
         </table>
        
         <table id="buttontable">
             <tr>
-                <td><button type="submit">Click to Register</button></td>
+                <td><button type="submit">Click to Update Details</button></td>
                   
             </tr>
         </table>    

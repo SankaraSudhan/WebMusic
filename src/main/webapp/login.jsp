@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Login page</title>
  <style>
         body {
             padding: 0;
@@ -163,16 +163,16 @@
 
             <div class="form-item">
                 <span class="material-icons-outlined">
-                    account_circle
+                    
                     </span>
-                <input type="text" name="text" id="text" placeholder="username or email">
+                <input type="text" name="text" id="text" placeholder="Enter Email Id">
             </div>
 
             <div class="form-item">
                 <span class="material-icons-outlined">                   
-                    lock
+                    
                     </span>
-                <input type="password" name="pass" id="pass" placeholder="password">
+                <input type="password" name="pass" id="pass" placeholder="Enter Password">
 
             </div>
 

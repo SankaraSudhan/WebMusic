@@ -18,12 +18,7 @@
 </style>
 </head>
 <body>
-<%		
-UserInfoDao UserInfoDao = new UserInfoDao();
-        List<UserInfo> userList = new ArrayList<UserInfo>();
-        userList = UserInfoDao.showAllUsers();
 
-		%>
 		
 		
 		<table border="2" id="allusers">
@@ -39,6 +34,7 @@ UserInfoDao UserInfoDao = new UserInfoDao();
 					<th>Role</th>
 					<th>Mobile_Number</th>
 					<th>Wallet</th>
+					<th>DeleteUser</th>
 					</tr>
 			</thead>
 			<br>
@@ -46,23 +42,31 @@ UserInfoDao UserInfoDao = new UserInfoDao();
 			
 						<tbody>
 				<%
-					int i = 0;
-					for (UserInfo showUser :userList ) {
-						i++;
+					
 						
+				UserInfoDao UserInfoDao = new UserInfoDao();
+				        List<UserInfo> userList = new ArrayList<UserInfo>();
+				        userList = UserInfoDao.showAllUsers();
+
+						
+				for (int i = 0; i<userList.size(); i++){
+					UserInfo userinfo = userList.get(i);
+					
 				%>
 				<tr>
 				
 					
 					<td><%=i%></td>
-					<td><%=showUser.getFirstName()%></td>
-					<td><%=showUser.getLastName()%></td>				
-					<td><%=showUser.getEmailId()%></td>				
-					<td> <%=showUser.getUserName()%></td>
-					<td> <%=showUser.getPassword()%></td>
-					<td> <%=showUser.getRole()%></td>
-					<td> <%=showUser.getMobileNumber()%></td>
-					<td> <%=showUser.getWallet()%></td>
+					<td><%=userinfo.getFirstName()%></td>
+					<td><%=userinfo.getLastName()%></td>				
+					<td><%=userinfo.getEmailId()%></td>				
+					<td> <%=userinfo.getUserName()%></td>
+					<td> <%=userinfo.getPassword()%></td>
+					<td> <%=userinfo.getRole()%></td>
+					<td> <%=userinfo.getMobileNumber()%></td>
+					<td> <%=userinfo.getWallet()%></td>
+					<td> <a href="deleteuser?uname=<%=userinfo.getUserName()%>" %>Delete</a>
+					
 					
 			</tr>
 					

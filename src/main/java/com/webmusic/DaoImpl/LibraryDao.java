@@ -68,9 +68,10 @@ public class LibraryDao {
 	}
 
 	// Delete song
-	public void deleteSong(String songTitle) throws ClassNotFoundException, SQLException {
-
-		String delete = "delete from library where song_title=?";
+	public boolean deleteSong(String songTitle) throws ClassNotFoundException, SQLException {
+		boolean flag=false;
+		try {
+		String delete = "update library set status= '"+"inActive"+"' where song_title=?";
 
 		Connection con = ConnectionUtil.getDBconnect();
 
@@ -78,15 +79,22 @@ public class LibraryDao {
 		stmt.setString(1, songTitle);
 
 		int res = stmt.executeUpdate();
-		System.out.println(res + "is deleted");
+		//System.out.println(res + "is deleted");
+		flag= stmt.executeUpdate()>0;
 		stmt.close();
 		con.close();
+		}
+		catch(Exception e) {
+			e.getMessage();
+			System.out.println("something went wrong");
+		}
+		 return flag;
 	}
 
 	// list song details
 	public List<Library> showAllSongs() {
 		List<Library> songList = new ArrayList<Library>();
-		String query = "select*from library";
+		String query = "select*from library where status='active'";
 		Connection con = null;
 		PreparedStatement stmt;
 		try {

@@ -4,14 +4,28 @@
 
 <web-app>
 	<servlet>
-		<servlet-name>SearchSongServlet</servlet-name>
-		<display-name>SearchSongServlet</display-name>
+		<servlet-name>DeleteSong</servlet-name>
+		<display-name>DeleteSong</display-name>
 		<description></description>
-		<servlet-class>com.webmusic.controller.SearchSongServlet</servlet-class>
+		<servlet-class>com.webmusic.controller.DeleteSong</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DeletePlaylist</servlet-name>
+		<display-name>DeletePlaylist</display-name>
+		<description></description>
+		<servlet-class>com.webmusic.controller.DeletePlaylist</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>SearchSongServlet</servlet-name>
-		<url-pattern>/SearchSongServlet</url-pattern>
+		<servlet-name>DeleteSong</servlet-name>
+		<url-pattern>/DeleteSong</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DeletePlaylist</servlet-name>
+		<url-pattern>/DeletePlaylist</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+	login.jsp
+	</welcome-file-list>
 
 </web-app>

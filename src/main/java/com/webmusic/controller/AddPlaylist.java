@@ -48,8 +48,18 @@ public class AddPlaylist extends HttpServlet {
 				Playlist playlist = new Playlist(lib, playlistTitle,currentUser.getEmailId());
 				PlaylistDao playDao = new PlaylistDao();			
 				playDao.insertPlaylist(playlist);
+			    if(playDao!=null) {
+					res.getWriter().print("Playlist added.!");
+
+				}
+				else 
+				{
+					res.getWriter().print("Not added");
+			
 			}
-			} catch (Exception e) {
+			}
+		}
+			 catch (Exception e) {
 				System.out.println(e.getMessage());
 			} 
 			

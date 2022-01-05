@@ -32,10 +32,13 @@ public class login extends HttpServlet{
 			
 			
 				Admin admin = loginDao.Checkadmin(uname, password);
+				
 				if(admin!=null)
-				{
+				{   
+					HttpSession session=req.getSession();
+					session.setAttribute("Adminstaration", admin);
 					System.out.println("admin");
-				res.sendRedirect("Admin.jsp");
+				    res.sendRedirect("Admin.jsp");
 				}
 				else
 				{
@@ -44,6 +47,7 @@ public class login extends HttpServlet{
 					
 					if(user.getRole().equals("Premium"))
 					{
+						
 					HttpSession session=req.getSession();
 					session.setAttribute("PremiumUser", user);
 					res.sendRedirect("home.jsp");

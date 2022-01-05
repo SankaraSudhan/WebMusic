@@ -13,11 +13,11 @@
 <body>
 
 		<table border="2" id="allsongs">
-			<h1><b>Song List</b></h1>
+			<h1><b>Search Result:</b></h1>
 			<thead>
 				<tr>
-				   <th >S.no</th>
-					<th>Song_id</th>
+				    <th >S.no</th> 
+					<th>Song_id</th> 
 					<th>Song_title</th>
 					<th>Artists</th>
 					<th>Album</th>
@@ -42,7 +42,7 @@
 				
 					
 					<td><%= i%></td>
-					<td><%= objbook.getSongId()%></td>
+		            <td><%= objbook.getSongId()%></td> 
 					<td><%= objbook.getSongTitle()%></td>				
 					<td><%= objbook.getArtists()%></td>				
 					<td> <%= objbook.getAlbum()%></td>

@@ -28,6 +28,9 @@
 </form>
 <a href ="ShowUsers.jsp">UsersList</a><br><br>
 <a href ="Showsong.jsp">SongList</a><br><br>
+<a href ="UpdateSong.jsp">UpdateSong</a><br><br>
+<a href ="DeleteSong.jsp">InActiveSong</a><br><br>
+<a href ="DeletePlaylist.jsp">DeletePlaylist</a><br><br>
 <a href ="ShowPlaylist.jsp"> AllPlaylist</a><br><br>
 <%		UserInfoDao UserInfoDao = new UserInfoDao();
         List<UserInfo> userList = new ArrayList<UserInfo>();

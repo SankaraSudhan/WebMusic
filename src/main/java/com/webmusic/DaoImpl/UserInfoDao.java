@@ -52,8 +52,8 @@ public class UserInfoDao {
 	}
 
 	// Delete user
-	public void delete(String userName) throws ClassNotFoundException, SQLException {
-
+	public boolean delete(String userName) throws ClassNotFoundException, SQLException {
+           boolean flag=false;
 		try {
 			String delete = "delete from user_info where user_name=?";
 
@@ -62,14 +62,15 @@ public class UserInfoDao {
 			PreparedStatement stmt = con.prepareStatement(delete);
 			stmt.setString(1, userName);
 
-			int res = stmt.executeUpdate();
-			System.out.println(res + "is deleted");
+			 flag= stmt.executeUpdate()>0;
+			//System.out.println(res + "is deleted");
 			stmt.close();
 			con.close();
 		} catch (Exception e) {
 			e.getMessage();
 			System.out.println("something went wrong");
 		}
+		return flag;
 	}
 
 	// List all users
@@ -102,23 +103,24 @@ public class UserInfoDao {
 	// Recharge Wallet
 	public int UpdateUserWallet(UserInfo user) {
 		String query = "update user_info set user_wallet=? where email_id=? ";
-		String getWalletQuery = "select user_wallet from user_info where email_id=?";
+		//String getWalletQuery = "select user_wallet from user_info where email_id=?";
 		Connection con;
 		int i = 0;
 		try {
 			con = ConnectionUtil.getDBconnect();
-			PreparedStatement checkWallet = con.prepareStatement(getWalletQuery);
-			checkWallet.setString(1, user.getEmailId());
-			ResultSet rs = checkWallet.executeQuery();
-			double wallet = 0;
-			if (rs.next()) {
-				wallet = rs.getDouble(1);
-			}
-			System.out.println(wallet + "wallet is found!!");
+			//PreparedStatement checkWallet = con.prepareStatement(getWalletQuery);
+			//checkWallet.setString(1, user.getEmailId());
+			//ResultSet rs = checkWallet.executeQuery();
+//			double wallet = 0;
+//			if (rs.next()) {
+//				wallet = rs.getDouble(1);
+//			}
+			//System.out.println(wallet + "wallet is found!!");
 			PreparedStatement updateWallet = con.prepareStatement(query);
-			updateWallet.setDouble(1, wallet + user.getWallet());
+			updateWallet.setDouble(1,  user.getWallet());
 			updateWallet.setString(2, user.getEmailId());
 			i = updateWallet.executeUpdate();
+			updateWallet.executeUpdate("commit");
 
 			System.out.println(i + "wallet is updated");
 
@@ -133,27 +135,32 @@ public class UserInfoDao {
     
 	// Switch to Premium
 	public int SwitchToPremium(UserInfo user) {
-		String query = "update user_info set user_wallet=?,role=? where email_id=? ";
-		String getWalletQuery = "select user_wallet from user_info where email_id=?";
+		String query = "update user_info set role=? where email_id=?";
+		//String getWalletQuery = "select user_wallet from user_info where email_id=?";
 		Connection con;
 		int i = 0;
 		try {
 			con = ConnectionUtil.getDBconnect();
-			PreparedStatement checkWallet = con.prepareStatement(getWalletQuery);
-			checkWallet.setString(1, user.getEmailId());
-			ResultSet rs = checkWallet.executeQuery();
-			double wallet = 0;
-			if (rs.next()) {
-				wallet = rs.getDouble(1);
-			}
-			System.out.println(wallet + "wallet is found!!");
-			PreparedStatement updateWallet = con.prepareStatement(query);
-			updateWallet.setDouble(1, wallet - 150);
-			updateWallet.setString(2, "Premium");
-			updateWallet.setString(3, user.getEmailId());
-			i = updateWallet.executeUpdate();
+			//PreparedStatement checkWallet = con.prepareStatement(getWalletQuery);
+			//checkWallet.setString(1, user.getEmailId());
+			//ResultSet rs = checkWallet.executeQuery();
+//			double wallet = 0;
+//			if (rs.next()) {
+//				wallet = rs.getDouble(1);
+//			}
+//			System.out.println(wallet + "wallet is found!!");
+			user.setWallet(user.getWallet()-150);
+			UpdateUserWallet(user);
+			PreparedStatement updateUser = con.prepareStatement(query);
+			
+			
+			updateUser.setString(1, "Premium");
+			updateUser.setString(2, user.getEmailId());
+			i = updateUser.executeUpdate();
+			updateUser.executeUpdate("commit");
+			
 
-			System.out.println(i + "wallet is updated");
+			System.out.println(i + "USer upgraded");
 
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
@@ -163,21 +170,46 @@ public class UserInfoDao {
 	}
     
 	// Add on user to share premium account
-	public int AddOnUser(String emailId) {
+	public int AddOnUser(String emailId,UserInfo user) {
 		int i = 0;
 		String updateQuery = "update user_info set role='Premium' where email_id=?";
+		String updatePremium = "update user_info set add_on=1 where email_id='"+user.getEmailId()+"'";
 		try {
 			Connection con = ConnectionUtil.getDBconnect();
 			PreparedStatement pstmt = con.prepareStatement(updateQuery);
 			pstmt.setString(1, emailId);
 			i = pstmt.executeUpdate();
 			System.out.println("user is updated to premium");
+			System.out.println(user.getEmailId());
+			i=pstmt.executeUpdate("commit");
+			i=pstmt.executeUpdate(updatePremium);
+			System.out.println("add on updated"+i);
+			
 		} catch (SQLException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		return i;
-
+		
+	}
+	public boolean findUserAlreadyAddOn(UserInfo user) throws ClassNotFoundException, SQLException
+	{
+		boolean result=false;
+		String getAddOn = "select add_on from user_info where email_id=?";
+		Connection con = ConnectionUtil.getDBconnect();
+		PreparedStatement pstmt = con.prepareStatement(getAddOn);
+		pstmt.setString(1, user.getEmailId());
+	    ResultSet rs= pstmt.executeQuery();
+	    if(rs.next()) {
+	    	System.out.println(rs.getInt(1));
+	    	if(rs.getInt(1)==0)
+	    	{
+	    		result=true;
+	    	}
+	    }
+	   
+		
+		return result;
 	}
 }

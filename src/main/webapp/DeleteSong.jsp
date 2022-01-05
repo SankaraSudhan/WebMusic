@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>SONG LIST PAGE</title>
+<title>Delete Song page</title>
 <style>
 #allsongs table,th,tr,td{
         border: 1px solid black;
@@ -19,14 +19,6 @@
 </style>
 </head>
 <body>
-
-<%
-LibraryDao libraryDao = new   LibraryDao();
-List<Library> objsonglist = (List<Library>)request.getAttribute("allSongs");
-objsonglist=libraryDao.showAllSongs();
-
-%>		
- 	
 		
 		<table border="2" id="allsongs">
 			<h1><b>Song List</b></h1>
@@ -39,11 +31,8 @@ objsonglist=libraryDao.showAllSongs();
 					<th>Album</th>
 					<th>Genre</th>
 					<th>Language</th>
-					
-										
-					
-				
-					
+					<th>DeleteSong</th>
+															
 					
 					</tr>
 			</thead>
@@ -52,21 +41,28 @@ objsonglist=libraryDao.showAllSongs();
 			
 						<tbody>
 				<% 
-					int i = 0;
-					for (Library objbook : objsonglist) {
-						i++;
+				LibraryDao libraryDao = new   LibraryDao();
+				List<Library> objsonglist = (List<Library>)request.getAttribute("allSongs");
+				objsonglist=libraryDao.showAllSongs();
+
+						
+				for (int i = 0; i<objsonglist.size(); i++){
+					
+					Library library = objsonglist.get(i);
+					
 						
 						%>
 				<tr>
 				
 					
 					<td><%=i%></td>
-					<td><%=objbook.getSongId()%></td>
-					<td><%=objbook.getSongTitle()%></td>				
-					<td><%=objbook.getArtists()%></td>				
-					<td> <%=objbook.getAlbum()%></td>
-					<td> <%=objbook.getGenre()%></td>
-					<td> <%=objbook.getLanguage()%></td>
+					<td><%=library.getSongId()%></td>
+					<td><%=library.getSongTitle()%></td>				
+					<td><%=library.getArtists()%></td>				
+					<td> <%=library.getAlbum()%></td>
+					<td> <%=library.getGenre()%></td>
+					<td> <%=library.getLanguage()%></td>
+					<td> <a href="deletesong?songTitle=<%=library.getSongTitle()%>" %>In Active</a>
 					
 					
 					
