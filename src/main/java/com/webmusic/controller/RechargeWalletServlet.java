@@ -40,7 +40,7 @@ public class RechargeWalletServlet extends HttpServlet {
 	        user.setWallet(amount);
 			int i=userDao.UpdateUserWallet(user);
 			if(user!=null) {
-				res.sendRedirect("login.jsp");
+				res.sendRedirect("user.jsp");
 				
 			}
 			else 

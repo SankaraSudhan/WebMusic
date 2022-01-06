@@ -88,6 +88,14 @@
             <tr>
                 <th><label for="language">Language:</label></th>
                 <th><input type="text" name="language" id="language" placeholder="Enter language" required></th>
+            </tr> 
+             <tr>
+                <th><label for="importSong">Add song to database:</label></th>
+                <th><input type="file" name="addSong" id="importSong"  required></th>
+            </tr>     
+              <tr>
+                <th><label for="imageSong">Add song to database:</label></th>
+                <th><input type="file" name="imgSong" id="imageSong"  required></th>
             </tr>         
         </table>
        

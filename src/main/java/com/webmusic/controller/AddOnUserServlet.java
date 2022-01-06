@@ -30,7 +30,7 @@ public class AddOnUserServlet extends HttpServlet {
 			
 			if(i>0) {
 				//res.sendRedirect("login.jsp");
-				   res.getWriter().print("User is Added");
+				   res.getWriter().print("User is Added successfully!!");
 				
 			       }
 			         else 

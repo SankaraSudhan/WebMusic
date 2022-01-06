@@ -3,11 +3,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register page</title>
+    <title>Wallet recharge page</title>
 
     <style>
         body{
-            background: url(images//registerbackground.jpg);
+            background: url(https://c1.wallpaperflare.com/preview/162/780/874/cassette-recording-sound-audio.jpg);
             background-size: cover;
             background-repeat: no-repeat ;
             
@@ -38,7 +38,7 @@
             
         }
         button:hover{
-            background-color: rgb(250, 196, 20);
+            background-color: rgb(109, 216, 235);
         }
         label,h2{
             color: black;

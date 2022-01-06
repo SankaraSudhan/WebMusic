@@ -50,8 +50,11 @@ public class DeletePlaylist extends HttpServlet {
 			boolean b=playlistdao.deletePlaylist(PlaylistTitle, user.getEmailId());
 			if(b==true)
 			{
+				response.getWriter().print("You'r playlist is deleted");
 				System.out.println(" playlist is deleted");
 				
+			}else {
+				response.getWriter().print("You'r playlist is not deleted!!");
 			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block

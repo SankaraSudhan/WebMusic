@@ -16,6 +16,10 @@
         border-collapse: collapse;
         padding: 10px;
         }
+ #img{
+ height: 80px;
+ width: 80px;
+ }       
 </style>
 </head>
 <body>
@@ -39,6 +43,9 @@ objsonglist=libraryDao.showAllSongs();
 					<th>Album</th>
 					<th>Genre</th>
 					<th>Language</th>
+					<th>Play_Song</th>
+					<th>Image_Song </th>
+					
 					
 										
 					
@@ -67,9 +74,12 @@ objsonglist=libraryDao.showAllSongs();
 					<td> <%=objbook.getAlbum()%></td>
 					<td> <%=objbook.getGenre()%></td>
 					<td> <%=objbook.getLanguage()%></td>
-					
-					
-					
+					<td>
+					<audio  controls>
+					<source src="<%=objbook.getSongFile() %>" >
+					</audio>
+					</td>
+					<td><img id="img" src="<%=objbook.getSongImage() %>"></td>
 			</tr>
 					
 					<%
@@ -81,3 +91,4 @@ objsonglist=libraryDao.showAllSongs();
 	
 </body>
 </html>
+

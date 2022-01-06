@@ -22,7 +22,7 @@
 		
 		
 		<table border="2" id="allusers">
-			<h1><b>All User List</b></h1>
+			<h1><b>Manage Users</b></h1>
 			<thead>
 				<tr>
 				   <th >S.no</th>

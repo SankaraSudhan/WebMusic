@@ -42,19 +42,28 @@ public class AddPlaylist extends HttpServlet {
 			Playlist playlist = new Playlist(lib, playlistTitle,premiumUser.getEmailId() );
 			PlaylistDao playDao = new PlaylistDao();			
 			playDao.insertPlaylist(playlist);
-			}else if (premiumUser==null){
+			 if(playDao!=null) {
+					res.getWriter().print("Your Playlist added.!");
+
+				}
+				else 
+				{
+					res.getWriter().print("Playlist is Not added");
+			}
+			}
+			else if (premiumUser==null){
 				
 				UserInfo currentUser = (UserInfo) session.getAttribute("currentUser");
 				Playlist playlist = new Playlist(lib, playlistTitle,currentUser.getEmailId());
 				PlaylistDao playDao = new PlaylistDao();			
 				playDao.insertPlaylist(playlist);
 			    if(playDao!=null) {
-					res.getWriter().print("Playlist added.!");
+					res.getWriter().print("Your Playlist added.!");
 
 				}
 				else 
 				{
-					res.getWriter().print("Not added");
+					res.getWriter().print("Playlist is Not added");
 			
 			}
 			}

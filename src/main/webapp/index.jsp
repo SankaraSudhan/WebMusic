@@ -8,7 +8,7 @@
 
     <style>
         body{
-            background: url(images//registerbackground.jpg);
+            background: url(https://wallpapercave.com/dwp1x/wp1836729.jpg);
             background-size: cover;
             background-repeat: no-repeat ;
             
@@ -39,10 +39,10 @@
             
         }
         button:hover{
-            background-color: rgb(250, 196, 20);
+            background-color: rgb(92, 199, 241);
         }
         label,h2{
-            color: black;
+            color: white;
         }
         #male{
             margin-left: 0%;

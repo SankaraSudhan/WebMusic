@@ -18,31 +18,102 @@
         border-collapse: collapse;
         padding: 10px;
         }
+       body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+table.center{
+margin-left:300px;
+margin-right:auto;
+}
+ .SearchBar {
+                position: absolute;
+                top: 100px;
+                left: 575px;
+                height: 200px;
+                width: 200px;
+                }
+
 </style>
 </head>
 <body>
-<form action="Search" method="get">
+<div class="sidebar">
+  <a href="Showsong.jsp">SongList</a>
+  <a href="AddPlaylist.jsp">Add Playlist</a>
+  <a href="Wallet.jsp">Recharge Wallet</a>
+  <a href="SwitchPremium.jsp">Switch to Premium</a>
+  <a href="UpdateUser.jsp">Update Details</a>
+</div> 
+<div class="SearchBar">
+<form action="Search" method="get" style="text-align: center;">
 
-<input type="text" name = "Song_Title" placeholder="search by songTitle,album,artist,genre,language">
+<input type="text" name = "Song_Title"  placeholder="search by songTitle,album,artist,genre,language">
 
 <button type="submit">Search</button>
 </form>
+</div>
 <% UserInfo uinfo =(UserInfo) session.getAttribute("currentUser");
 %>
-<p id="user" >Welcome <%= uinfo.getFirstName() %></p>
-<a href ="Showsong.jsp">SongList</a><br><br>
-<a href ="AddPlaylist.jsp">Add Playlist</a><br><br>
-<a href ="Wallet.jsp">Recharge Wallet</a><br><br>
-<a href ="SwitchPremium.jsp">Switch to Premium</a><br><br>
-<a href ="UpdateUser.jsp">Update Details</a>
+<p style="text-align: center;" id="user" >Welcome <%= uinfo.getFirstName() %></p>
+
 <%		LibraryDao libraryDao = new   LibraryDao();
 		List<Library> objsonglist = (List<Library>)request.getAttribute("allSongs");
 		objsonglist=libraryDao.showAllSongs();
 		%>
 		
 		
-		<table border="2" id="allsongs">
-			<h1><b>Song List</b></h1>
+		<table border="2" id="allsongs" class="center">
+			<h1 align="center"><b>Song List</b></h1>
 			<thead>
 				<tr>
 				   <th >S.no</th>

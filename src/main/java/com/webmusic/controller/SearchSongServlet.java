@@ -69,14 +69,7 @@ public class SearchSongServlet extends HttpServlet {
 			 }
 			 
 		 }
-//		for(int i=0;i<songtitle.size(); i++) {
-//			System.out.println(songtitle.get(i));
-//		}
-		 
-//		
-		
-		
-		
+
 		
 		HttpSession session = request.getSession();
 		

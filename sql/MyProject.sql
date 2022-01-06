@@ -57,6 +57,7 @@ select * from playlist where email_id ='sivashruthi99@gmail.com';
 select * from playlist join library on playlist.song_id = library.song_id
 where playlist.email_id='ruban123@gmail.com' and playlist.playlist_title ='Two' ;
 
-delete from library where song_title='Avalum_Nanum';
-alter table library add status varchar (30) default 'active';
+delete from playlist where playlist_title='Two';
+alter table playlist add status varchar (30) default 'active';
 desc user_playlist;
+update playlist set status='inActive'  where playlist_title='myNew' and email_id='hem34@gmail.com';

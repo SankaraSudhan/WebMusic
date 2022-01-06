@@ -11,6 +11,8 @@ public class Library {
 	 private String album;
 	 private String genre;
 	 private String language;
+	 private String songFile;
+	 private String songImage;
 
 	public int getSongId() {
 		return songId;
@@ -51,6 +53,18 @@ public class Library {
 	}
 	
 	
+	public String getSongFile() {
+		return songFile;
+	}
+	public void setSongFile(String songFile) {
+		this.songFile = songFile;
+	}
+	public String getSongImage() {
+		return songImage;
+	}
+	public void setSongImage(String songImage) {
+		this.songImage = songImage;
+	}
 	@Override
 	public String toString() {
 		return "\nsongId=" + songId + ", songTitle=" + songTitle + ", artists="
@@ -66,6 +80,29 @@ public class Library {
 		this.genre = genre;
 		this.language = language;
 		
+	}
+	public Library(int songId, String songTitle, String artists, String album, String genre, String language,
+			String songFile, String songImage) {
+		super();
+		this.songId = songId;
+		this.songTitle = songTitle;
+		this.artists = artists;
+		this.album = album;
+		this.genre = genre;
+		this.language = language;
+		this.songFile = songFile;
+		this.songImage = songImage;
+	}
+	public Library(int songId, String songTitle, String artists, String album, String genre, String language,
+			String songFile) {
+		super();
+		this.songId = songId;
+		this.songTitle = songTitle;
+		this.artists = artists;
+		this.album = album;
+		this.genre = genre;
+		this.language = language;
+		this.songFile = songFile;
 	}
 	public Library() {
 		super();

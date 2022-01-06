@@ -21,7 +21,7 @@
 <body>
 		
 		<table border="2" id="allsongs">
-			<h1><b>Song List</b></h1>
+			<h1><b>Manage songs:</b></h1>
 			<thead>
 				<tr>
 				   <th >S.no</th>

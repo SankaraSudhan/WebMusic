@@ -23,8 +23,6 @@
 <br><br>
 <a href ="Showsong.jsp">SongList</a><br><br>
 <a href ="AddPlaylist.jsp">Add Playlist</a><br><br>
-<a href ="Wallet.jsp">Recharge Wallet</a><br><br>
-<a href ="SwitchPremium.jsp">Switch to Premium</a><br><br>
 <a href ="AddOnUser.jsp">AddOn User</a><br><br>
 <a href ="DeletePlaylist.jsp">DeletePlaylist</a><br><br>
 <a href ="ShowPlaylist.jsp"> AllPlaylist</a><br><br>

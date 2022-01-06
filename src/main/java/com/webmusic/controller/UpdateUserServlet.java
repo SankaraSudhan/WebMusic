@@ -43,12 +43,13 @@ public class UpdateUserServlet extends HttpServlet {
 			UserInfoDao upd=new UserInfoDao();
 		    upd.update(update);
 		    if(upd!=null) {
-				res.getWriter().print("Details updated");
+				res.getWriter().print("You'r Details are updated..!");
+//				res.sendRedirect("user.jsp");
 
 			}
 			else 
 			{
-				res.getWriter().print("Not updated");
+				res.getWriter().print("User Not updated");
 			}
 	
 			} catch (Exception e) {

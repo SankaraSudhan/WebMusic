@@ -9,7 +9,7 @@
 
     <style>
         body{
-            background: url(images//registerbackground.jpg);
+            background: url(https://c4.wallpaperflare.com/wallpaper/677/228/927/piano-musical-instrument-monochrome-dust-wallpaper-preview.jpg);
             background-size: cover;
             background-repeat: no-repeat ;
             
@@ -40,10 +40,10 @@
             
         }
         button:hover{
-            background-color: rgb(250, 196, 20);
+            background-color:rgb(109, 216, 235);
         }
         label,h2{
-            color: black;
+            color: white;
         }
         #male{
             margin-left: 0%;

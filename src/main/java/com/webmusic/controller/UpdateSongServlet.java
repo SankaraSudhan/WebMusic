@@ -35,13 +35,18 @@ public class UpdateSongServlet extends HttpServlet {
             	
 			String language = req.getParameter("language");
 			System.out.println(language);
+			
+			String addSong = req.getParameter("addSong");
+			System.out.println(addSong);
             		    
-		    Library update = new Library(songId, songTitle, artist, album, genre, language);
+			String songImage=req.getParameter("imgSong");
+		    System.out.println(songImage);
+			Library update = new Library(songId, songTitle, artist, album, genre, language,addSong,songImage);
 		    LibraryDao updt = new LibraryDao();
 		    updt.update(update);
 		    if(updt!=null) {
 				res.getWriter().print(" Song Details Updated.");
-
+                res.sendRedirect("Admin.jsp");
 			}
 			else 
 			{

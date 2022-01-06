@@ -7,7 +7,7 @@
 
     <style>
         body{
-            background: url(images//registerbackground.jpg);
+            background: url(https://c4.wallpaperflare.com/wallpaper/949/575/798/headphones-music-audifonos-wallpaper-preview.jpg);
             background-size: cover;
             background-repeat: no-repeat ;
             
@@ -41,7 +41,7 @@
             background-color: rgb(20, 250, 123);
         }
         label,h2{
-            color: blueviolet;
+            color: white;
         }
         #male{
             margin-left: 0%;
@@ -56,31 +56,23 @@
 
 	<form action="addPlaylist">
     <fieldset class="playlistadd">
+    
+    <br><br>
        <center><h2>Add Playlist</h2></center>
-
+     
         <table id="signuptable" style="border-spacing: 5px;">
+        
             <tr>
                 <th><label for="SongTitle">Song Title:</label></th>
                 <th><input type="text" name="SongTitle" id="SongTitle" placeholder="Enter Song Id" required ></th>
             </tr>
-           <!---
-            <tr>
-                <th><label for="PlaylistId">Playlist Id:</label></th>
-                <th><input type="text" name="PlaylistId" id="PlaylistId" placeholder="Enter Playlist Id" required ></th>
-            </tr>
-           
-               -->      
+       
             <tr>
                 <th><label for="PlaylistTitle">Playlist Title:</label></th>
                 <th><input type="text" name="PlaylistTitle" id="PlaylistTitle" placeholder="Enter Song Title" required ></th>
             </tr>
            
-           <!-- <tr>
-                <th><label for="EmailId">Email Id:</label></th>
-                <th><input type="email" name="EmailId" id="EmailId" placeholder="Enter Email Id"  required ></th>
-            </tr>
-           -->
-            
+   
        
         <table id="buttontable">
             <tr>

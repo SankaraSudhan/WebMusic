@@ -49,7 +49,7 @@ public class LibraryDao {
 	//Update song details
 	public void update(Library up) throws ClassNotFoundException, SQLException {
 
-		String update = "update library set  song_title=?, artists=?,album=?, genre=?, language = ? where song_id = ?";
+		String update = "update library set  song_title=?, artists=?,album=?, genre=?, language = ?, song_file=?,song_image=? where song_id = ?";
 
 		Connection con = ConnectionUtil.getDBconnect();
 		PreparedStatement stmt = con.prepareStatement(update);
@@ -60,8 +60,9 @@ public class LibraryDao {
 		stmt.setString(3, up.getAlbum());
 		stmt.setString(4, up.getGenre());
 		stmt.setString(5, up.getLanguage());
-		stmt.setInt(6, up.getSongId());
-		
+		stmt.setString(6, up.getSongFile());
+		stmt.setString(7, up.getSongImage());
+		stmt.setInt(8, up.getSongId());
 		int res = stmt.executeUpdate();
 
 		System.out.println(res + " is updated !!");
@@ -109,7 +110,7 @@ public class LibraryDao {
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				Library library = new Library(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),
-						rs.getString(5), rs.getString(6));
+						rs.getString(5), rs.getString(6),rs.getString(8),rs.getString(9));
 				songList.add(library);
 			}
 
@@ -138,7 +139,7 @@ public class LibraryDao {
 			while (rs.next()) {
 				//System.out.println("song name"+rs.getString(2));
 				Library library = new Library(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),
-						rs.getString(5), rs.getString(6));
+						rs.getString(5), rs.getString(6),rs.getString(8),rs.getString(9));
 				
 				searchlist.add(library);
 				

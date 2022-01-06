@@ -14,18 +14,21 @@
         }
         
         .background {
-            background: url('images//LoginPageBackground.jpg') rgba(0, 0, 0, 0.61);
+            background: url(https://c4.wallpaperflare.com/wallpaper/361/42/364/headphones-black-white-akg-wallpaper-preview.jpg) rgba(0, 0, 0, 0.61);
             background-repeat: no-repeat;
             background-size: cover;
-            background-blend-mode: darken;
+          
+            background-blend-mode: light;
             position: absolute;
             top: 0;
             bottom: 0;
             left: 0;
             right: 0;
-            z-index: -1;
+            z-index: -1;         
             filter: blur(3px);
             min-height: 800px;
+           
+           
 
         }
         

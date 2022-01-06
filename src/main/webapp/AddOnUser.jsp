@@ -7,7 +7,7 @@
 
     <style>
         body{
-            background: url(images//registerbackground.jpg);
+            background: url(https://c4.wallpaperflare.com/wallpaper/331/308/999/headphones-music-minimalism-wallpaper-preview.jpg);
             background-size: cover;
             background-repeat: no-repeat ;
             
@@ -41,7 +41,7 @@
             background-color: rgb(250, 196, 20);
         }
         label,h2,h3{
-            color: black;
+            color: white;
         }
         #male{
             margin-left: 0%;
