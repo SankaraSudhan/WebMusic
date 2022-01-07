@@ -14,15 +14,23 @@
 #allsongs table,th,tr,td{
         border: 1px solid black;
         border-collapse: collapse;
+        text-align: center;
         padding: 10px;
+        
         }
+        #allsongs {    
+        position: absolute;
+        left:110px;
+        }
+        
  #img{
  height: 80px;
  width: 80px;
- }       
+ }      
+  
 </style>
 </head>
-<body>
+<body style="background-color: lightblue">
 
 <%
 LibraryDao libraryDao = new   LibraryDao();
@@ -33,10 +41,10 @@ objsonglist=libraryDao.showAllSongs();
  	
 		
 		<table border="2" id="allsongs">
-			<h1><b>Song List</b></h1>
+			<h1><b><center>All Songs List</center></b></h1>
 			<thead>
 				<tr>
-				   <th >S.no</th>
+				  
 					<th>Song_id</th>
 					<th>Song_title</th>
 					<th>Artists</th>
@@ -45,12 +53,7 @@ objsonglist=libraryDao.showAllSongs();
 					<th>Language</th>
 					<th>Play_Song</th>
 					<th>Image_Song </th>
-					
-					
 										
-					
-				
-					
 					
 					</tr>
 			</thead>
@@ -67,7 +70,7 @@ objsonglist=libraryDao.showAllSongs();
 				<tr>
 				
 					
-					<td><%=i%></td>
+					
 					<td><%=objbook.getSongId()%></td>
 					<td><%=objbook.getSongTitle()%></td>				
 					<td><%=objbook.getArtists()%></td>				
@@ -76,10 +79,10 @@ objsonglist=libraryDao.showAllSongs();
 					<td> <%=objbook.getLanguage()%></td>
 					<td>
 					<audio  controls>
-					<source src="<%=objbook.getSongFile() %>" >
+					<source src="Assets/<%=objbook.getSongFile() %>" >
 					</audio>
 					</td>
-					<td><img id="img" src="<%=objbook.getSongImage() %>"></td>
+					<td><img id="img" src="Assets/<%=objbook.getSongImage() %>"></td>
 			</tr>
 					
 					<%

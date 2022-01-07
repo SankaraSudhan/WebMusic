@@ -1,0 +1,66 @@
+package com.webmusic.controller;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.webmusic.DaoImpl.UserInfoDao;
+import com.webmusic.model.UserInfo;
+@WebServlet("/switch")
+public class SwitchUserServlet extends HttpServlet {
+
+
+	public void service(HttpServletRequest req, HttpServletResponse res) {
+
+		try {
+            UserInfoDao userDao = new UserInfoDao();
+
+		
+			HttpSession session=req.getSession();
+	        UserInfo user=(UserInfo)session.getAttribute("currentUser");
+	        Double amount = user.getWallet();
+			///int i=userDao.UpdateUserWallet(user);
+			
+			
+				
+				
+				UserInfoDao userdao=new UserInfoDao();
+				 int result=userdao.SwitchToPremium(user);
+				 if(user.getWallet()<amount) {
+					 System.out.println("User upgraded");
+				 if(result>0)
+				 {
+					 user.setRole("Premium");
+					 req.getSession().setAttribute("PremiumUser", user);
+					 req.getSession().setAttribute("currentUser", null);
+					 res.sendRedirect("login.jsp");
+					 System.out.println("amount is deducted");
+				 }
+				 
+				 else
+				 {
+					 System.out.println("insufficient balance");
+				 }
+//					response.getWriter("Recharge Succesfull");
+				}
+		
+					
+			if(user!=null) {
+				res.sendRedirect("login.jsp");
+				
+			}
+			else 
+			{
+				res.getWriter().print("can't recharge");
+			}		    
+		    
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			} 
+			
+		
+	} 
+
+}

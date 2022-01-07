@@ -7,13 +7,13 @@
 
     <style>
         body{
-            background: url(https://c4.wallpaperflare.com/wallpaper/677/228/927/piano-musical-instrument-monochrome-dust-wallpaper-preview.jpg);
+            background: url(https://wallpapercave.com/dwp1x/sN6S7Xu.jpg);
             background-size: cover;
             background-repeat: no-repeat ;
             
         }
         .signup{
-            width: 400px;
+            width: 400px;	
             height: 400px;
             margin-left: 380px;
             margin-top: 90px ;

@@ -68,23 +68,23 @@
        
             <tr>
                 <th><label for="CardNumber">Card Number:</label></th>
-                <th><input type="number" name="AccountNumber" id="AccountNumber" placeholder="Enter card number"  required autofocus ></th>
+                <th><input type="number" name="AccountNumber" id="AccountNumber" placeholder="Enter card number" pattern ="[0-9]{15}" required autofocus ></th>
             </tr>
            
                     
            <tr>
                 <th><label for="cvv">CVV:</label></th>
-                <th><input type="number" name="cvv" id="cvv" placeholder="Enter CVV" required ></th>
+                <th><input type="number" name="cvv" id="cvv" placeholder="Enter CVV" pattern ="[0-9]{3}" required ></th>
             </tr>
             
                <tr>
                 <th><label for="mobile">Mobile Number:</label></th>
-                <th><input type="number" name="MobileNumber" id="mobile" placeholder="Enter mobile number" required></th>
+                <th><input type="number" name="MobileNumber" id="mobile" placeholder="Enter mobile number" pattern ="[0-9]{10}" required></th>
             </tr>                     
             
             <tr>
                 <th><label for="Amount">Amount:</label></th>
-                <th><input type="number" name="Amount" id="amount" placeholder="Enter Amount" required ></th>
+                <th><input type="number" min="0" name="Amount" id="amount" placeholder="Enter Amount" pattern ="[0-9]{10}" required ></th>
                 
         </table>
        

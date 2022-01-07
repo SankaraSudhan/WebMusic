@@ -14,17 +14,22 @@
 #allsongs table,th,tr,td{
         border: 1px solid black;
         border-collapse: collapse;
+         text-align: center;
         padding: 10px;
+        }
+         #allsongs {    
+        position: absolute;
+        left:230px;
         }
 </style>
 </head>
-<body>
+<body style="background-color: lightblue">
 		
 		<table border="2" id="allsongs">
-			<h1><b>Manage songs:</b></h1>
+			<h1><b><center>Manage songs</center></b></h1>
 			<thead>
 				<tr>
-				   <th >S.no</th>
+				   
 					<th>Song_id</th>
 					<th>Song_title</th>
 					<th>Artists</th>
@@ -55,7 +60,7 @@
 				<tr>
 				
 					
-					<td><%=i%></td>
+				
 					<td><%=library.getSongId()%></td>
 					<td><%=library.getSongTitle()%></td>				
 					<td><%=library.getArtists()%></td>				

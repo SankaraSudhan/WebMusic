@@ -50,8 +50,9 @@ public class DeletePlaylist extends HttpServlet {
 			boolean b=playlistdao.deletePlaylist(PlaylistTitle, user.getEmailId());
 			if(b==true)
 			{
-				response.getWriter().print("You'r playlist is deleted");
-				System.out.println(" playlist is deleted");
+//				response.getWriter().print("You'r playlist is deleted");
+//				System.out.println(" playlist is deleted");
+				response.sendRedirect("ShowPlayListUser.jsp");
 				
 			}else {
 				response.getWriter().print("You'r playlist is not deleted!!");

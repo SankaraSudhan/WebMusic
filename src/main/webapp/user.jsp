@@ -16,6 +16,7 @@
 #allsongs table,th,tr,td{
         border: 1px solid black;
         border-collapse: collapse;
+         text-align: center;
         padding: 10px;
         }
        body {
@@ -27,7 +28,7 @@
   margin: 0;
   padding: 0;
   width: 200px;
-  background-color: #f1f1f1;
+  background-color: lightblue;
   position: fixed;
   height: 100%;
   overflow: auto;
@@ -41,12 +42,12 @@
 }
  
 .sidebar a.active {
-  background-color: #04AA6D;
-  color: white;
+  background-color: lightblue;
+  color: lightblue;
 }
 
 .sidebar a:hover:not(.active) {
-  background-color: #555;
+  background-color: lightblue;
   color: white;
 }
 
@@ -84,16 +85,38 @@ margin-right:auto;
                 width: 200px;
                 }
 
+#allsongs table,th,tr,td{
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 2px;
+        
+        }
+        
+  #allsongs {    
+        position: absolute;
+        left:200px;
+        }
+ #img{
+ height: 80px;
+ width: 80px;
+ }     
+#logo{
+width:130px;
+position: absolute;
+right:0px;
+top:0px;
+}  
+
 </style>
 </head>
-<body>
+<body style="background-color: lightblue">
 <div class="sidebar">
-  <a href="Showsong.jsp">SongList</a>
-  <a href="AddPlaylist.jsp">Add Playlist</a>
+  <a href="ShowSongUser.jsp">SongList</a>
   <a href="Wallet.jsp">Recharge Wallet</a>
   <a href="SwitchPremium.jsp">Switch to Premium</a>
   <a href="UpdateUser.jsp">Update Details</a>
 </div> 
+<div><img id="logo" src="Assets/MWlogo.png"></div>
 <div class="SearchBar">
 <form action="Search" method="get" style="text-align: center;">
 
@@ -105,51 +128,56 @@ margin-right:auto;
 <% UserInfo uinfo =(UserInfo) session.getAttribute("currentUser");
 %>
 <p style="text-align: center;" id="user" >Welcome <%= uinfo.getFirstName() %></p>
+<h1><center>Music World</center></h1>
+<%
+LibraryDao libraryDao = new   LibraryDao();
+List<Library> objsonglist = (List<Library>)request.getAttribute("allSongs");
+objsonglist=libraryDao.showAllSongs();
 
-<%		LibraryDao libraryDao = new   LibraryDao();
-		List<Library> objsonglist = (List<Library>)request.getAttribute("allSongs");
-		objsonglist=libraryDao.showAllSongs();
-		%>
-		
-		
-		<table border="2" id="allsongs" class="center">
-			<h1 align="center"><b>Song List</b></h1>
+%>		
+ 	
+		<h1 id="songlisthead"><b>-  </b></h1>
+		<table border="2" id="allsongs">
+			
 			<thead>
 				<tr>
-				   <th >S.no</th>
+				   
 					<th>Song_id</th>
 					<th>Song_title</th>
 					<th>Artists</th>
 					<th>Album</th>
 					<th>Genre</th>
 					<th>Language</th>
-					
-					
+					<th>Play_Song</th>
+					<th>Image_Song </th>								
 					</tr>
 			</thead>
 			<br>
 			<br>
 			
 						<tbody>
-				<%
+				<% 
 					int i = 0;
 					for (Library objbook : objsonglist) {
 						i++;
 						
-				%>
+						%>
 				<tr>
 				
 					
-					<td><%=i%></td>
+					
 					<td><%=objbook.getSongId()%></td>
 					<td><%=objbook.getSongTitle()%></td>				
 					<td><%=objbook.getArtists()%></td>				
 					<td> <%=objbook.getAlbum()%></td>
 					<td> <%=objbook.getGenre()%></td>
 					<td> <%=objbook.getLanguage()%></td>
-					
-					
-					
+					<td>
+					<audio  controls>
+					<source src="Assets/<%=objbook.getSongFile() %>" >
+					</audio>
+					</td>
+					<td><img id="img" src="Assets/<%=objbook.getSongImage() %>"></td>
 			</tr>
 					
 					<%
@@ -157,6 +185,8 @@ margin-right:auto;
 				%>
 					</tbody>
 		           </table>
+			
+	
 			
 </body>
 </html>
