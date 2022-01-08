@@ -44,8 +44,7 @@ text-decoration: none;
   font-family: "Lato", sans-serif;
 }
 
-.
-}
+
 table.center{
 margin-left:300px;
 margin-right:auto;
@@ -112,6 +111,7 @@ top:-25px;
 </style>
 </head>
 <body>
+<body style="background-color: lightblue ">
 <div id="nav">
 
         <ul type="none">
@@ -139,25 +139,17 @@ top:-25px;
         <div id="search">
 <form action="Search" method="get" style="text-align: center;">
 
-<input type="text" name = "Song_Title"  placeholder="search by songTitle,album,artist,genre,language">
+<input type="text" name = "Song_Title"  placeholder="Search for Music which you love..">
 
 <button type="submit">Search</button>
 </form>
 </div>
     </div>
-    <!-- 
-<div class="sidebar">
- <a href ="ShowUsers.jsp">ManageUsers</a><br><br>
-<a href ="Showsong.jsp">AllSongsList</a><br><br>
-<a href ="AddSong.jsp">AddSong</a><br><br>
-<a href ="UpdateSong.jsp">UpdateSong</a><br><br>
-<a href ="DeleteSong.jsp">ManageSongs</a><br><br>
-<a href ="ShowPlaylist.jsp">AllPlaylist</a><br><br>
-</div> -->
+ 
 <div><img id="logo" src="Assets/MWlogoo.png"></div>
 
-<p><center>Welcome Sudhan</center></p>
-<h1><center>Music World</center></h1>
+
+
 <%
 LibraryDao libraryDao = new   LibraryDao();
 List<Library> objsonglist = (List<Library>)request.getAttribute("allSongs");
@@ -165,7 +157,7 @@ objsonglist=libraryDao.showAllSongs();
 
 %>		
  	
-		<h1 id="songlisthead"><b>-  </b></h1>
+		<h1 id="songlisthead"><b>ADMIN PAGE</b></h1>  
 		<table border="2" id="allsongs">
 			
 			<thead>

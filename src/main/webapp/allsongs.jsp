@@ -10,135 +10,84 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <style>
-body{
-background-color: black;}
-.conatiner{
-       
-        width: fit-content;
-        height: fit-content;
-    }
-.slideshow-container img{
-    width: 300px;
-
-    height: 200px;
-}
-.slideshow-container audio{
-    width: 300px; 
-  box-shadow: 5px 5px 20px rgba(0,0, 0, 0.4);
-  border-radius: 90px;
-
-  position: relative;
-  bottom: -30px;
-}
-.songDetails{
-    position: relative;
-    top: -130px;
-    color: white;
-    left: 10px;
-    font-style: italic;
-}
-
-.slideshow-container {
-		  max-width: 1000px;
-		  position: relative;
-		  margin: auto;
-		}
-		
-		.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
+img {
+            width: 60px;
+            height: 200px;
+        }
+        .prev{
+            position: absolute;
+            top: 150px;
+            left: 10px;
+            font-size: x-large;
+        }
+        .next{
+            position: absolute;
+            top: 150px;
+            right: 20px;
+            font-size: x-large;
+        }
+        .next:hover,.prev:hover{
+            height: 10x;
+            background-color: gray;
+        }
 
 
 </style>
 </head>
 <body>
-<%
-LibraryDao libraryDao = new   LibraryDao();
-List<Library> objsonglist = (List<Library>)request.getAttribute("allSongs");
-objsonglist=libraryDao.showAllSongs();
+<div id="image">
 
-				 int i = 0;
-					for (Library objbook : objsonglist) {
-						i++;
-						
-						%>	
-
-<div class="slideshow-container">
-
-
-
-        <div class="mySlides fade">
-        
+        <div class="slideshow-container">
     
-        <img  src="Assets/<%=objbook.getSongImage() %>" > 
-        <br>
-        <audio id="ohhsanthi" src="Assets/<%=objbook.getSongFile() %>" controls></audio> 
-        <div class="songDetails">
-            <b><%=objbook.getSongTitle()%></b>
-            <br>
-            <b><%=objbook.getArtists()%></b>
-            <br>
-            <b><%=objbook.getLanguage()%></b>
-        </div>
-    <%} %>
-        </div>
-        
-     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-<a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <div class="mySlides fade">
+         
+              <img src="Assets/okk3.jpg" style="width:80%">
+            </div>
+            <div class="mySlides fade">
+            
+              <img src="Assets/unnamed.jpg" style="width:80%">
+            </div>
+            <div class="mySlides fade">
+            
+              <img src="https://gos3.ibcdn.com/img-1637069665.jpg" style="width:80%">
+            </div>
 
-</div>
+            <div class="mySlides fade">
+            
+                <img src="https://previews.123rf.com/images/goodstudio/goodstudio1904/goodstudio190400147/123962405-horizontal-banner-with-bus-riding-along-road-from-departure-point-towards-camping-at-destination-poi.jpg" style="width:80%">
+              </div>
+
+              <div class="mySlides fade">
+            
+                <img src="https://static.vecteezy.com/system/resources/previews/002/729/483/non_2x/flat-green-bus-design-with-isolatd-white-modern-public-bus-travel-car-concept-vector.jpg" style="width:80%">
+              </div>
+    
+        
+            </div>
+    </div>
+
+
 
 
 </body>
 </html>
 
 <script>
-var slideIndex = 1;
-showSlides(slideIndex);
+var slideIndex = 0;
+showSlides();
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
+function showSlides() {
   var i;
   var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
+
   for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
+    slides[i].style.display = "none";  
   }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+
   slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
+  
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
 </script>

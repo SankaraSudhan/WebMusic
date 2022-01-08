@@ -4,45 +4,160 @@
     <%@page import="java.util.List"%>
             <%@page import="com.webmusic.DaoImpl.LibraryDao"%>
  
-    
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>SONG LIST PAGE PREMIUM</title>
+<title> Premium User all songlist page</title>
 <style>
+ul {
+            margin: 0;
+            overflow: hidden;
+            background-color:black;
+            color: white;
+            font-weight: bolder;
+            padding:30px 150px;
+            opacity: 0.5px;
+        }
+
+        li {
+            float: left;
+            color: black;
+        }
+
+
+a{
+color:white;
+text-decoration: none;
+}
+
 #allsongs table,th,tr,td{
         border: 1px solid black;
         border-collapse: collapse;
-        text-align: center;
+         text-align: center;
         padding: 10px;
+        }
+       body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+
+table.center{
+margin-left:300px;
+margin-right:auto;
+}
+ #search {
+	position: absolute;
+	top: 15px;
+	right:10px;
+	border:2px solid white;
+}
+
+#search input {
+	border: none;
+	height: 30px;
+	font-weight: bold;
+	outline: none;
+	background-color:transparent;
+	font-size: 18px;
+}
+
+#search  button {
+	position: relative;
+	left: 0px;
+	background-color: DodgerBlue;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	height: 38px;
+}
+
+::placeholder {
+	color: white;
+	font-size: 13px;
+	height: 30px;
+	font-style: italic;
+}
+
+#allsongs table,th,tr,td{
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 2px;
         
         }
-        #allsongs {    
+        
+  #allsongs {    
         position: absolute;
-        left:110px;
+        left:200px;
         }
-        
  #img{
+
+        
  height: 80px;
  width: 80px;
- }    
- function goBack() {
-  window.history.back()
+ }   
+ #logo{
+width:130px;
+position: absolute;
+left:0px;
+top:-25px;
 }  
-  
+     
+
 </style>
 </head>
-<body style="background-color: lightblue">
+<body>
+<body style="background-color: lightblue ">
+<div id="nav">
 
-<%
+        <ul type="none">
+            
+         
+            <li><a href ="ShowSongPremium.jsp">SongList</a></li>
+            <li>&nbsp;&nbsp;&nbsp;</li>
+              <li>&nbsp;&nbsp;&nbsp;</li>
+            <li><a href ="AddPlaylist.jsp">Add Playlist</a></li>
+             <li>&nbsp;&nbsp;&nbsp;</li>
+               <li>&nbsp;&nbsp;&nbsp;</li>
+            <li><a href ="AddOnUser.jsp">AddOn User</a></li>
+             <li>&nbsp;&nbsp;&nbsp;</li>
+               <li>&nbsp;&nbsp;&nbsp;</li>
+            <li><a href ="DeletePlaylist.jsp">DeletePlaylist</a></li>
+             <li>&nbsp;&nbsp;&nbsp;</li>
+               <li>&nbsp;&nbsp;&nbsp;</li>
+            <li><a href ="ShowPlaylistUser.jsp"> AllPlaylist</a></li>
+            <li>&nbsp;&nbsp;&nbsp;</li>
+               <li>&nbsp;&nbsp;&nbsp;</li>
+            <li><a href ="UpdatePremiumUser.jsp">Update Details</a></li>
+                <li>&nbsp;&nbsp;&nbsp;</li>
+               <li>&nbsp;&nbsp;&nbsp;</li>
+            <li><a href ="home.jsp">Home</a></li>
+          
+        </ul>
+        <div id="search">
+<form action="Search" method="get" style="text-align: center;">
+
+<input type="text" name = "Song_Title"  placeholder="Search for Music which you love..">
+
+<button type="submit">Search</button>
+</form>
+</div>
+    </div>
+ 
+<div><img id="logo" src="Assets/MWlogoo.png"></div>
+
+
+<% 
 LibraryDao libraryDao = new   LibraryDao();
 List<Library> objsonglist = (List<Library>)request.getAttribute("allSongs");
 objsonglist=libraryDao.showAllSongs();
 
 %>		
  	
-		
 		<table border="2" id="allsongs">
 			<h1><b><center>All Songs List</center></b></h1>
 			<thead>
@@ -55,9 +170,7 @@ objsonglist=libraryDao.showAllSongs();
 					<th>Genre</th>
 					<th>Language</th>
 					<th>Play_Song</th>
-					<th>Image_Song </th>
-										
-					
+					<th>Image_Song </th>								
 					</tr>
 			</thead>
 			<br>
@@ -93,8 +206,9 @@ objsonglist=libraryDao.showAllSongs();
 				%>
 					</tbody>
 		           </table>
-			<button onclick="goBack()">Go Back</button>
+			
 	
+			
 </body>
 </html>
 

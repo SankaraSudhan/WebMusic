@@ -1,13 +1,15 @@
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register page</title>
+    <title>Update premium user details</title>
 
     <style>
         body{
-            background: url(https://c1.wallpaperflare.com/preview/162/780/874/cassette-recording-sound-audio.jpg);
+            background: url(https://c4.wallpaperflare.com/wallpaper/677/228/927/piano-musical-instrument-monochrome-dust-wallpaper-preview.jpg);
             background-size: cover;
             background-repeat: no-repeat ;
             
@@ -38,10 +40,10 @@
             
         }
         button:hover{
-            background-color: rgb(250, 196, 20);
+            background-color:rgb(109, 216, 235);
         }
         label,h2{
-            color: black;
+            color: white;
         }
         #male{
             margin-left: 0%;
@@ -51,7 +53,7 @@
             outline: none;
         }
         
-         ul {
+                ul {
             margin: 0;
             overflow: hidden;
             background-color:black;
@@ -59,7 +61,7 @@
             font-weight: bolder;
             padding:30px 150px;
             opacity: 0.5px;
-            position: absolute;
+             position: absolute;
             top: 0px;
             left:0px;
             width: 1065px;
@@ -107,7 +109,7 @@ margin-right:auto;
 }
 
 ::placeholder {
-	color: lightblack;
+	color: white;
 	font-size: 13px;
 	height: 30px;
 	font-style: italic;
@@ -135,42 +137,40 @@ position: absolute;
 left:0px;
 top:-25px;
 }  
-     #addsongs{
-position: absolute;
-top:70px;
-}
-      
-    
+         
+        
+        
+        
         
     </style>
 </head>
 <body>
 
-
 <div id="nav">
 
         <ul type="none">
             
-            <li><a href ="ShowUsers.jsp">ManageUsers</a></li>
+      
+            <li><a href ="ShowSongPremium.jsp">SongList</a></li>
             <li>&nbsp;&nbsp;&nbsp;</li>
               <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="Showsong.jsp">AllSongsList</a></li>
+            <li><a href ="AddPlaylist.jsp">Add Playlist</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="AddSong.jsp">AddSong</a></li>
+            <li><a href ="AddOnUser.jsp">AddOn User</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="UpdateSong.jsp">UpdateSong</a></li>
+            <li><a href ="DeletePlaylist.jsp">DeletePlaylist</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="DeleteSong.jsp">ManageSongs</a></li>
-             <li>&nbsp;&nbsp;&nbsp;</li>
+            <li><a href ="ShowPlaylistUser.jsp"> AllPlaylist</a></li>
+            <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="ShowPlaylist.jsp">AllPlaylist</a></li>
-              <li>&nbsp;&nbsp;&nbsp;</li>
+            <li><a href ="UpdatePremiumUser.jsp">Update Details</a></li>
+                <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="Admin.jsp">Home</a></li>
-          
+            <li><a href ="home.jsp">Home</a></li>
+        
         </ul>
         <div id="search">
 <form action="Search" method="get" style="text-align: center;">
@@ -183,51 +183,43 @@ top:70px;
     </div>
  
 <div><img id="logo" src="Assets/MWlogoo.png"></div>
+            
+            
 
-
-
-	<form action="UpdateSong">
+	<form action="Update">
     <fieldset class="signup">
-       <center><h2>Update Song details here!</h2></center>
+       <center><h2>Update details here!</h2></center>
 
         <table id="signuptable" style="border-spacing: 5px;">
             <tr>
-                <th><label for="id">Song Id:</label></th>
-                <th><input type="number" name="song_id" id="id" placeholder="Enter song id" required autofocus></th>
+                <th><label for="name">First Name:</label></th>
+                <th><input type="text" name="FirstName" id="name" placeholder="Enter your first name" required autofocus></th>
             </tr>
             <tr>
-                <th><label for="title">Song Title:</label></th>
-                <th><input type="text" name="song_title" id="title" placeholder="Enter song title" required autofocus></th>
+                <th><label for="name">Last Name:</label></th>
+                <th><input type="text" name="LastName" id="name" placeholder="Enter your last name" required autofocus></th>
             </tr>
            
             <tr>
-                <th><label for="artist">Artists:</label></th>
-                <th><input type="text" name="artists" id="artist" placeholder="Enter artist"  required ></th>
+                <th><label for="emailId">Email Id:</label></th>
+                <th><input type="email" name="UserEmail" id="emailId" placeholder="Enter email Id"  required ></th>
             </tr>
            
                     
            <tr>
-                <th><label for="album">Album:</label></th>
-                <th><input type="text" name="album" id=""album"" placeholder="Enter album" required ></th>
+                <th><label for="name">User Name:</label></th>
+                <th><input type="text" name="UserName" id="name" placeholder="Enter user name" required autofocus></th>
             </tr>
             
                                   
             <tr>
-                <th><label for="genre">Genre:</label></th>
-                <th><input type="text" name="genre" id="genre" placeholder="Enter genre" required ></th>
+                <th><label for="password">Password:</label></th>
+                <th><input type="password" name="UserPassword" id="password" placeholder="********" required ></th>
             </tr>
            
             <tr>
-                <th><label for="language">Language:</label></th>
-                <th><input type="text" name="language" id="language" placeholder="Enter language" required></th>
-            </tr> 
-             <tr>
-                <th><label for="importSong">Add song to database:</label></th>
-                <th><input type="file" name="addSong" id="importSong"  required></th>
-            </tr>     
-              <tr>
-                <th><label for="imageSong">Add song to database:</label></th>
-                <th><input type="file" name="imgSong" id="imageSong"  required></th>
+                <th><label for="mobile">Mobile Number:</label></th>
+                <th><input type="number" name="MobileNumber" id="mobile" placeholder="Enter mobile number" required></th>
             </tr>         
         </table>
        
