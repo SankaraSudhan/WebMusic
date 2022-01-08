@@ -12,6 +12,27 @@
 <meta charset="ISO-8859-1">
 <title>Admin page</title>
 <style>
+ul {
+            margin: 0;
+            overflow: hidden;
+            background-color:black;
+            color: white;
+            font-weight: bolder;
+            padding:30px 150px;
+            opacity: 0.5px;
+        }
+
+        li {
+            float: left;
+            color: black;
+        }
+
+
+a{
+color:white;
+text-decoration: none;
+}
+
 #allsongs table,th,tr,td{
         border: 1px solid black;
         border-collapse: collapse;
@@ -23,67 +44,45 @@
   font-family: "Lato", sans-serif;
 }
 
-.sidebar {
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  background-color: lightblue;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
-}
-
-.sidebar a {
-  display: block;
-  color: black;
-  padding: 16px;
-  text-decoration: none;
-}
- 
-.sidebar a.active {
-  background-color: lightblue;
-  color: lightblue;
-}
-
-.sidebar a:hover:not(.active) {
-  background-color: lightblue;
-  color: white;
-}
-
-div.content {
-  margin-left: 200px;
-  margin-top:0px;
-  padding: 1px 16px;
-  height: 1000px;
-}
-
-@media screen and (max-width: 700px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-  .sidebar a {float: left;}
-  div.content {margin-left: 0;}
-}
-
-@media screen and (max-width: 400px) {
-  .sidebar a {
-    text-align: center;
-    float: none;
-  }
+.
 }
 table.center{
 margin-left:300px;
 margin-right:auto;
 }
- .SearchBar {
-                position: absolute;
-                top: 100px;
-                left: 575px;
-                height: 200px;
-                width: 200px;
-                }
+ #search {
+	position: absolute;
+	top: 15px;
+	right:10px;
+	border:2px solid white;
+}
+
+#search input {
+	border: none;
+	height: 30px;
+	font-weight: bold;
+	outline: none;
+	background-color:transparent;
+	font-size: 18px;
+}
+
+#search  button {
+	position: relative;
+	left: 0px;
+	background-color: DodgerBlue;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	height: 38px;
+}
+
+::placeholder {
+	color: white;
+	font-size: 13px;
+	height: 30px;
+	font-style: italic;
+}
 
 #allsongs table,th,tr,td{
         border: 1px solid black;
@@ -97,30 +96,47 @@ margin-right:auto;
         left:200px;
         }
  #img{
+
+        
  height: 80px;
  width: 80px;
  }   
  #logo{
 width:130px;
 position: absolute;
-right:0px;
-top:0px;
+left:0px;
+top:-25px;
 }  
      
 
 </style>
 </head>
-<body style="background-color: lightblue">
-<div class="sidebar">
- <a href ="ShowUsers.jsp">ManageUsers</a><br><br>
-<a href ="Showsong.jsp">AllSongsList</a><br><br>
-<a href ="AddSong.jsp">AddSong</a><br><br>
-<a href ="UpdateSong.jsp">UpdateSong</a><br><br>
-<a href ="DeleteSong.jsp">ManageSongs</a><br><br>
-<a href ="ShowPlaylist.jsp">AllPlaylist</a><br><br>
-</div> 
-<div><img id="logo" src="Assets/MWlogo.png"></div>
-<div class="SearchBar">
+<body>
+<div id="nav">
+
+        <ul type="none">
+            
+           
+    
+            <li><a href ="ShowUsers.jsp">ManageUsers</a></li>
+            <li>&nbsp;&nbsp;&nbsp;</li>
+              <li>&nbsp;&nbsp;&nbsp;</li>
+            <li><a href ="Showsong.jsp">AllSongsList</a></li>
+             <li>&nbsp;&nbsp;&nbsp;</li>
+               <li>&nbsp;&nbsp;&nbsp;</li>
+            <li><a href ="AddSong.jsp">AddSong</a></li>
+             <li>&nbsp;&nbsp;&nbsp;</li>
+               <li>&nbsp;&nbsp;&nbsp;</li>
+            <li><a href ="UpdateSong.jsp">UpdateSong</a></li>
+             <li>&nbsp;&nbsp;&nbsp;</li>
+               <li>&nbsp;&nbsp;&nbsp;</li>
+            <li><a href ="DeleteSong.jsp">ManageSongs</a></li>
+             <li>&nbsp;&nbsp;&nbsp;</li>
+               <li>&nbsp;&nbsp;&nbsp;</li>
+            <li><a href ="ShowPlaylist.jsp">AllPlaylist</a></li>
+          
+        </ul>
+        <div id="search">
 <form action="Search" method="get" style="text-align: center;">
 
 <input type="text" name = "Song_Title"  placeholder="search by songTitle,album,artist,genre,language">
@@ -128,6 +144,18 @@ top:0px;
 <button type="submit">Search</button>
 </form>
 </div>
+    </div>
+    <!-- 
+<div class="sidebar">
+ <a href ="ShowUsers.jsp">ManageUsers</a><br><br>
+<a href ="Showsong.jsp">AllSongsList</a><br><br>
+<a href ="AddSong.jsp">AddSong</a><br><br>
+<a href ="UpdateSong.jsp">UpdateSong</a><br><br>
+<a href ="DeleteSong.jsp">ManageSongs</a><br><br>
+<a href ="ShowPlaylist.jsp">AllPlaylist</a><br><br>
+</div> -->
+<div><img id="logo" src="Assets/MWlogoo.png"></div>
+
 <p><center>Welcome Sudhan</center></p>
 <h1><center>Music World</center></h1>
 <%

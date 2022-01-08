@@ -10,6 +10,8 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <style>
+body{
+background-color: black;}
 .conatiner{
        
         width: fit-content;
@@ -42,26 +44,31 @@
 		  margin: auto;
 		}
 		
-			.prev, .next {
-		  cursor: pointer;
-		  position: absolute;
-		  top: 50%;
-		  width: auto;
-		  color: blue
-		  font-weight: bold;
-		  font-size: 18px;
+		.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
 
-		}
-		.next {
-		  right: -210px;
-	
-		}
-		
-		.prev:hover, .next:hover ,.numbertext:hover{
-			font-weight: bolder;
-		  background-color:white;
-		  color: black;
-		}
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
 
 
 </style>
@@ -72,22 +79,22 @@ LibraryDao libraryDao = new   LibraryDao();
 List<Library> objsonglist = (List<Library>)request.getAttribute("allSongs");
 objsonglist=libraryDao.showAllSongs();
 
-					%>		
-
-<div class="slideshow-container">
-
-<div class="conatiner">
-<% int i = 0;
+				 int i = 0;
 					for (Library objbook : objsonglist) {
 						i++;
 						
-						%>
+						%>	
+
+<div class="slideshow-container">
+
+
+
         <div class="mySlides fade">
         
     
-        <img  src="<%=objbook.getSongImage() %>" > 
+        <img  src="Assets/<%=objbook.getSongImage() %>" > 
         <br>
-        <audio id="ohhsanthi" src="<%=objbook.getSongFile() %>" controls></audio> 
+        <audio id="ohhsanthi" src="Assets/<%=objbook.getSongFile() %>" controls></audio> 
         <div class="songDetails">
             <b><%=objbook.getSongTitle()%></b>
             <br>
@@ -97,9 +104,9 @@ objsonglist=libraryDao.showAllSongs();
         </div>
     <%} %>
         </div>
-             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        
+     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
 
 </div>
 
@@ -108,29 +115,30 @@ objsonglist=libraryDao.showAllSongs();
 </html>
 
 <script>
-    var slideIndex = 1;
-    showSlides(slideIndex);
-    
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-    
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-    
-    function showSlides(n) {
-    	var i;
-    	  var slides = document.getElementsByClassName("mySlides");
+var slideIndex = 1;
+showSlides(slideIndex);
 
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
 
-      if (n > slides.length) {slideIndex = 1}    
-      if (n < 1) {slideIndex = slides.length}
-      for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";  
-      }
-   
-      slides[slideIndex-1].style.display = "block";  
- 
-    }
-  
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
