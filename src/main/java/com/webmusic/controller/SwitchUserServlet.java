@@ -28,7 +28,7 @@ public class SwitchUserServlet extends HttpServlet {
 				
 				UserInfoDao userdao=new UserInfoDao();
 				 int result=userdao.SwitchToPremium(user);
-				 if(user.getWallet()<amount) {
+				 if(user.getWallet()>amount) {
 					 System.out.println("User upgraded");
 				 if(result>0)
 				 {

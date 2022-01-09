@@ -63,6 +63,7 @@ margin-right:auto;
 	outline: none;
 	background-color:transparent;
 	font-size: 18px;
+	color: white;
 }
 
 #search  button {
@@ -134,6 +135,9 @@ top:-25px;
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
             <li><a href ="ShowPlaylist.jsp">AllPlaylist</a></li>
+                 <li>&nbsp;&nbsp;&nbsp;</li>
+               <li>&nbsp;&nbsp;&nbsp;</li>
+            <li><a href ="login.jsp">Logout</a></li>
           
         </ul>
         <div id="search">

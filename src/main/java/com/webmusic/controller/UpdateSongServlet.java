@@ -45,7 +45,7 @@ public class UpdateSongServlet extends HttpServlet {
 		    LibraryDao updt = new LibraryDao();
 		    updt.update(update);
 		    if(updt!=null) {
-				res.getWriter().print(" Song Details Updated.");
+//				res.getWriter().print(" Song Details Updated.");
                 res.sendRedirect("Admin.jsp");
 			}
 			else 

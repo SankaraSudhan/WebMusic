@@ -84,6 +84,8 @@ margin-right:auto;
 	top: 15px;
 	right:10px;
 	border:2px solid white;
+	height: 38px;
+	
 }
 
 #search input {
@@ -93,6 +95,8 @@ margin-right:auto;
 	outline: none;
 	background-color:transparent;
 	font-size: 18px;
+	color: white;
+
 }
 
 #search  button{

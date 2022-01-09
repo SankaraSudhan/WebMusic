@@ -10,8 +10,14 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <style>
-img {
-            width: 60px;
+#image{
+position: relative;
+left: 145px;
+
+}
+
+#image img {
+            width: 60%;
             height: 200px;
         }
         .prev{
@@ -30,6 +36,7 @@ img {
             height: 10x;
             background-color: gray;
         }
+
 
 
 </style>
@@ -88,6 +95,6 @@ function showSlides() {
 
   slides[slideIndex-1].style.display = "block";  
   
-  setTimeout(showSlides, 2000); // Change image every 2 seconds
+  setTimeout(showSlides, 5000); // Change image every 2 seconds
 }
 </script>

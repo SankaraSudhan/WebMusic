@@ -252,6 +252,7 @@ margin-right:auto;
 	outline: none;
 	background-color:transparent;
 	font-size: 18px;
+	color: white;
 }
 
 #search  button {
@@ -323,6 +324,9 @@ top:-25px;
             <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
             <li><a href ="UpdatePUser.jsp">Update Details</a></li>
+              <li>&nbsp;&nbsp;&nbsp;</li>
+               <li>&nbsp;&nbsp;&nbsp;</li>
+            <li><a href ="login.jsp">Logout</a></li>
         </ul>
         <div id="search">
 <form action="Search" method="get" style="text-align: center;">
@@ -339,6 +343,7 @@ top:-25px;
 <% UserInfo uinfo =(UserInfo) session.getAttribute("PremiumUser");
 %>
 <p style="text-align: center;" id="user" >Welcome <%= uinfo.getFirstName() %></p>
+
 <%
 
 LibraryDao libraryDao = new   LibraryDao();
@@ -347,7 +352,7 @@ objsonglist=libraryDao.showAllSongs();
 
 %>		
  	
-		<h1 id="songlisthead"><b> Premium User page</b></h1>  
+		<center><h1 id="songlisthead"><b> Premium User page</b></h1></center>
 		<table border="2" id="allsongs">
 			
 			<thead>

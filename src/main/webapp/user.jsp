@@ -291,12 +291,41 @@ position: absolute;
 left:0px;
 top:-25px;
 }  
+    
+    #image{
+position: relative;
+left: 145px;
+
+}
+
+#image img {
+            width: 60%;
+            height: 200px;
+        }
+        .prev{
+            position: absolute;
+            top: 150px;
+            left: 10px;
+            font-size: x-large;
+        }
+        .next{
+            position: absolute;
+            top: 150px;
+            right: 20px;
+            font-size: x-large;
+        }
+        .next:hover,.prev:hover{
+            height: 10x;
+            background-color: gray;
+        }
+
+
      
 
 </style>
 </head>
 <body>
-<body style="background-color: lightblue ">
+<body style="background: lightblue ">
 <div id="nav">
 
         <ul type="none">
@@ -315,7 +344,9 @@ top:-25px;
             <li><a href ="UpdateUser.jsp">Update Details</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-           
+              <li>&nbsp;&nbsp;&nbsp;</li>
+               <li>&nbsp;&nbsp;&nbsp;</li>
+            <li><a href ="login.jsp">Logout</a></li>
           
         </ul>
         <div id="search">
@@ -332,7 +363,7 @@ top:-25px;
 
 <% UserInfo uinfo =(UserInfo) session.getAttribute("currentUser");
 %>
-<p style="text-align: center;" id="user" >Welcome <%= uinfo.getFirstName() %></p>
+
 <%
 
 LibraryDao libraryDao = new   LibraryDao();
@@ -340,9 +371,50 @@ List<Library> objsonglist = (List<Library>)request.getAttribute("allSongs");
 objsonglist=libraryDao.showAllSongs();
 
 %>		
+ 	<div id="image">
+
+        <div class="slideshow-container">
+    
+            <div class="mySlides fade">
+         
+              <img src="Assets/okk3.jpg" style="width:80%">
+            </div>
+            <div class="mySlides fade">
+                <img src="Assets/suriya.jpg" style="width:80%">
+            </div>
+            <div class="mySlides fade">
+        
+         
+            
+               <img src="Assets/unnamed.jpg" style="width:80%">
+            </div>
+            <div class="mySlides fade">
+            
+                <img src="Assets/AW.jpg" style="width:80%">
+              </div>
+              
+              
+              <div class="mySlides fade">
+            
+                <img src="Assets/marshmello.jpg" style="width:80%">
+              </div>
+    
+        
+            </div>
+    </div>
+
+
+ 	<p style="text-align: center;" id="user" >Welcome <%= uinfo.getFirstName() %></p>
+ 	
+ 	
+ 	
  	
 		<h1 id="songlisthead"><b>User page</b></h1>  
 		<table border="2" id="allsongs">
+	
+	
+	
+	
 			
 			<thead>
 				<tr>
@@ -395,7 +467,25 @@ objsonglist=libraryDao.showAllSongs();
 			
 </body>
 </html>
+<script>
+var slideIndex = 0;
+showSlides();
 
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+
+  slides[slideIndex-1].style.display = "block";  
+  
+  setTimeout(showSlides, 2500); // Change image every 2 seconds
+}
+</script>
 
 
 

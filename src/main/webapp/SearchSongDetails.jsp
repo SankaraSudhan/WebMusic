@@ -29,7 +29,7 @@
 <body style="background-color: lightblue">
 
 		<table border="2" id="allsongs">
-			<h1><b><center>Search Result:</center></b></h1>
+			
 			<thead>
 				<tr>
 			

@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register page</title>
+    <title>Update song page</title>
 
     <style>
         body{
@@ -84,6 +84,7 @@ margin-right:auto;
 	top: 15px;
 	right:10px;
 	border:2px solid white;
+	height: 38px;
 }
 
 #search input {
@@ -93,6 +94,7 @@ margin-right:auto;
 	outline: none;
 	background-color:transparent;
 	font-size: 18px;
+	color: white;
 }
 
 #search  button{

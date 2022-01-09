@@ -130,7 +130,9 @@ top:-25px;
             <li><a href ="UpdateUser.jsp">Update Details</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-           
+                  <li><a href ="user.jsp">Home</a></li>
+             <li>&nbsp;&nbsp;&nbsp;</li>
+               <li>&nbsp;&nbsp;&nbsp;</li>
           
         </ul>
         <div id="search">

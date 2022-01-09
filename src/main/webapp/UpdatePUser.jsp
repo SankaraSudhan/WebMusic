@@ -86,6 +86,7 @@ margin-right:auto;
 	top: 15px;
 	right:10px;
 	border:2px solid white;
+	height: 38px;
 }
 
 #search input {
@@ -95,6 +96,8 @@ margin-right:auto;
 	outline: none;
 	background-color:transparent;
 	font-size: 18px;
+	color: white;
+	
 }
 
 #search  button{
@@ -166,7 +169,7 @@ top:-25px;
             <li><a href ="ShowPlaylistUser.jsp"> AllPlaylist</a></li>
             <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="UpdatePremiumUser.jsp">Update Details</a></li>
+            <li><a href ="UpdatePUser.jsp">Update Details</a></li>
                 <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
             <li><a href ="home.jsp">Home</a></li>
