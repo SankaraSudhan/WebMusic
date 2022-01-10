@@ -218,12 +218,6 @@ color:white;
 text-decoration: none;
 }
 
-#allsongs table,th,tr,td{
-        border: 1px solid black;
-        border-collapse: collapse;
-         text-align: center;
-        padding: 10px;
-        }
        body {
   margin: 0;
   font-family: "Lato", sans-serif;
@@ -248,6 +242,7 @@ margin-right:auto;
 	outline: none;
 	background-color:transparent;
 	font-size: 18px;
+	color: white;
 }
 
 #search  button {
@@ -268,22 +263,17 @@ margin-right:auto;
 	font-style: italic;
 }
 
-#allsongs table,th,tr,td{
-        border: 1px solid black;
-        border-collapse: collapse;
-        padding: 2px;
-        
-        }
+
         
   #allsongs {    
         position: absolute;
-        left:200px;
+        left:400px;
         }
  #img{
 
         
- height: 80px;
- width: 80px;
+ height: 100px;
+ width: 100px;
  }   
  #logo{
 width:130px;
@@ -319,34 +309,96 @@ left: 145px;
             background-color: gray;
         }
 
+          .gl:hover{
+            background: rgb(109, 216, 235);
+           
+        }
+
+
+
+
+/* 
+
+*style{
+margin:0;
+padding:0;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url("image/");
+    font-size:13.5px;
+}
+  ul
+  {
+        list-style: none;
+        background-color: #1c1c1c;
+        margin:0;
+    }
+  li{
+      display:inline-block;
+      padding-top: 13px;
+      padding-bottom: 13px;
+      text-align: center;
+      font-size: 15px;
+  }
+  li a{
+      text-decoration: none;
+      font-weight:bold;
+      color:white;
+      display:block;
+      padding-right: 7px;
+      padding-left: 7px;
+  }
+  li button{
+      margin-right: 500px;
+  }
+  .text{
+        margin-right: 20px;
+  }
+img 
+{
+height:210px;
+width:250px;
+overflow:hidden;
+padding-top:60px;
+padding-bottom:33px;
+}
+.names{
+position : relative;
+top:180px;
+left: -250px;
+width: 200%;
+padding-bottom:30px;
+}
+
+
+ */
 
      
 
 </style>
 </head>
 <body>
-<body style="background: lightblue ">
+<body style="background: url(Assets/resul-mentes-DbwYNr8RPbg-unsplash.jpg)">
 <div id="nav">
 
         <ul type="none">
             
            
     
-            <li><a href ="ShowSongUser.jsp">SongList</a></li>
+            <li> <a href ="ShowSongUser.jsp" class="gl" >SongList</a></li>
             <li>&nbsp;&nbsp;&nbsp;</li>
               <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="Wallet.jsp">Recharge Wallet</a></li>
+            <li><a href ="Wallet.jsp"    class="gl" >Recharge Wallet</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="SwitchPremium.jsp">Switch to Premium</a></li>
+            <li><a href ="SwitchPremium.jsp"  class="gl" >Switch to Premium</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="UpdateUser.jsp">Update Details</a></li>
+            <li><a href ="UpdateUser.jsp"   class="gl" >Update Details</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-              <li>&nbsp;&nbsp;&nbsp;</li>
-               <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="login.jsp">Logout</a></li>
+            <li><a href ="login.jsp"   class="gl" >Logout</a></li>
           
         </ul>
         <div id="search">
@@ -379,25 +431,35 @@ objsonglist=libraryDao.showAllSongs();
          
               <img src="Assets/okk3.jpg" style="width:80%">
             </div>
-            <div class="mySlides fade">
-                <img src="Assets/suriya.jpg" style="width:80%">
+            
+            
+         <div class="mySlides fade">
+                <img src="Assets/wp2009638-avicii-wallpapers.jpg" style="width:80%">
             </div>
+           
             <div class="mySlides fade">
         
          
             
                <img src="Assets/unnamed.jpg" style="width:80%">
             </div>
+            
+            
             <div class="mySlides fade">
             
                 <img src="Assets/AW.jpg" style="width:80%">
               </div>
               
+               <div class="mySlides fade">
+                <img src="Assets/suriya.jpg" style="width:80%">
+            </div>
               
               <div class="mySlides fade">
             
                 <img src="Assets/marshmello.jpg" style="width:80%">
               </div>
+    
+     
     
         
             </div>
@@ -408,8 +470,8 @@ objsonglist=libraryDao.showAllSongs();
  	
  	
  	
- 	
-		<h1 id="songlisthead"><b>User page</b></h1>  
+ 	<!-- 
+		<h1 id="songlisthead"><b>User page</b></h1>   -->
 		<table border="2" id="allsongs">
 	
 	
@@ -419,13 +481,13 @@ objsonglist=libraryDao.showAllSongs();
 			<thead>
 				<tr>
 				  
-					<th>Song_id</th>
+		<!-- 			<th>Song_id</th> -->
 					<th>Song_title</th>
-					<th>Artists</th>
+	<!-- 				<th>Artists</th>
 					<th>Album</th>
 					<th>Genre</th>
 					<th>Language</th>
-					<th>Play_Song</th>
+				 -->	<th>Play_Song</th>
 					<th>Image_Song </th>								
 					</tr>
 			</thead>
@@ -443,13 +505,13 @@ objsonglist=libraryDao.showAllSongs();
 				
 					
 					
-					<td><%=objbook.getSongId()%></td>
+	<%-- 				<td><%=objbook.getSongId()%></td> --%>
 					<td><%=objbook.getSongTitle()%></td>				
-					<td><%=objbook.getArtists()%></td>				
+		<%-- 			<td><%=objbook.getArtists()%></td>				
 					<td> <%=objbook.getAlbum()%></td>
 					<td> <%=objbook.getGenre()%></td>
 					<td> <%=objbook.getLanguage()%></td>
-					<td>
+			 --%>		<td>
 					<audio  controls>
 					<source src="Assets/<%=objbook.getSongFile() %>" >
 					</audio>
@@ -464,6 +526,48 @@ objsonglist=libraryDao.showAllSongs();
 		           </table>
 			
 	
+	
+ 	<%-- 
+		
+	
+		 <table id="allsongs">
+				<% 
+					int count = 0;
+					for (Library objbook : objsonglist) {
+											
+						%>
+				
+				 
+                       
+                            <tbody>
+				
+			<tr>
+					<td>					
+					<audio  controls>
+					<source src="Assets/<%=objbook.getSongFile() %>" >
+					</audio></td>
+					
+					<td><img id="img" src="Assets/<%=objbook.getSongImage() %>"></td>
+			</tr>
+					</tbody>
+					</table>
+					 </td>
+                       <% count ++;
+                       if(count==2){ %>
+                      
+                      </tr>              
+                     <%count=0; }}%> 
+					</tr>
+	               </tbody>
+		           </table>
+			 --%>
+	
+			
+</body>
+</html>
+			
+			
+			
 			
 </body>
 </html>

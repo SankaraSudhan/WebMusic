@@ -21,6 +21,11 @@ public class SwitchUserServlet extends HttpServlet {
 			HttpSession session=req.getSession();
 	        UserInfo user=(UserInfo)session.getAttribute("currentUser");
 	        Double amount = user.getWallet();
+	        if(amount>=150) {
+	        	
+	        	
+	        
+	        
 			///int i=userDao.UpdateUserWallet(user);
 			
 			
@@ -55,7 +60,10 @@ public class SwitchUserServlet extends HttpServlet {
 			{
 				res.getWriter().print("can't recharge");
 			}		    
-		    
+	        }
+	        else {
+	        	res.sendRedirect("Wallet.jsp");
+	        }
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			} 

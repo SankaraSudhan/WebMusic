@@ -35,9 +35,9 @@ public class SearchSongServlet extends HttpServlet {
 
 	   
 		 List<Library> songtitle = song.searchsongs();
-		 for(int k=0; k<songtitle.size(); k++) {
-			 System.out.println(songtitle.get(k));
-		 }
+//		 for(int k=0; k<songtitle.size(); k++) {
+//			 System.out.println(songtitle.get(k));
+//		 }
 		  List<Library> showList = new ArrayList<Library>();
 		 
 		 for(int i =0; i<songtitle.size(); i++) {

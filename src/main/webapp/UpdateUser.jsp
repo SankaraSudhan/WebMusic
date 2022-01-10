@@ -111,7 +111,7 @@ margin-right:auto;
 }
 
 ::placeholder {
-	color: white;
+	color: light black;
 	font-size: 13px;
 	height: 30px;
 	font-style: italic;

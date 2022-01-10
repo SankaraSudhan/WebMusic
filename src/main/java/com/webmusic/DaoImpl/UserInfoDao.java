@@ -24,7 +24,7 @@ public class UserInfoDao {
 		stmt.setString(3, str.getEmailId());
 		stmt.setString(4, str.getUserName());
 		stmt.setString(5, str.getPassword());
-		stmt.setString(6, str.getRole());
+		stmt.setString(6, "user");
 		stmt.setLong(7, str.getMobileNumber());
 		stmt.setDouble(8, 0);
 		stmt.executeUpdate();

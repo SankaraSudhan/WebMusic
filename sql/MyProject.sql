@@ -42,7 +42,7 @@ CREATE TABLE admin (user_Name VARCHAR2(50) NOT NULL,
                     password VARCHAR2(20) NOT NULL,
                     FOREIGN KEY (user_Name) REFERENCES user_info (user_Name)); 
                     
-select * from user_info;
+select * from user_info; 
 select * from library;
 select * from playlist;
 select * from user_playlist;
@@ -59,6 +59,15 @@ where playlist.email_id='ruban123@gmail.com' and playlist.playlist_title ='Two' 
 
 delete from playlist where playlist_title='D';
 alter table playlist add status varchar (30) default 'active';
+
+
+
+
 alter table library add song_image VARCHAR2(4000);
 desc user_playlist;
 update playlist set status='inActive'  where playlist_title='myNew' and email_id='hem34@gmail.com';
+
+
+ALTER TABLE user_info
+modify role VARCHAR2(15) default 'user';
+

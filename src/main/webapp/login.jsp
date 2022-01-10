@@ -142,6 +142,7 @@
         }
         a{
             color: white;
+            text-decoration: none;
         }
         a:hover{
             color: grey;
@@ -183,7 +184,7 @@
             <p> Or </p>
             <div class="options">
                 
-                <button class="gl"><a href="index.jsp">Register</a></button>
+                <button class="gl" ><a href="index.jsp">Register</a></button>
             </div>
            
         </form>

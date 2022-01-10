@@ -7,8 +7,8 @@
     <title>Register page</title>
 
     <style>
-        body{
-            background: url(https://wallpapercave.com/dwp1x/wp1836729.jpg);
+       body{
+            background: url(Assets/markus-spiske-hU9gx8YfVK4-unsplash.jpg);
             background-size: cover;
             background-repeat: no-repeat ;
             
@@ -42,7 +42,7 @@
             background-color: rgb(92, 199, 241);
         }
         label,h2{
-            color: white;
+            color: black;
         }
         #male{
             margin-left: 0%;
@@ -51,6 +51,27 @@
         input{
             outline: none;
         }
+        
+        
+        .gl:hover{
+            background: rgb(109, 216, 235);
+            border: none;
+            box-shadow: 0 0 5px  rgb(109, 216, 235);
+        }
+        
+          a {
+            color: black;
+            text-decoration: none;
+        }
+        
+          .options {
+            display: flex;
+            margin:  10px auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        
     </style>
 </head>
 <body>
@@ -71,9 +92,10 @@
            
             <tr>
                 <th><label for="emailId">Email Id:</label></th>
-                <th><input type="email" name="UserEmail" id="emailId" placeholder="Enter email Id" pattern = "[a-z0-9]+[@][a-z]+[.][a-z]+{2,5}" required ></th>
+                <th><input type="email" name="UserEmail" id="emailId" placeholder="Enter email Id"  required onkeyup="emailvalid()" ></th>
+                
             </tr>
-           
+                    <p id="emailresponse"></p>  
                     
            <tr>
                 <th><label for="name">User Name:</label></th>
@@ -86,10 +108,10 @@
                 <th><input type="password" name="UserPassword" id="password" placeholder="********" pattern = "[a-zA-Z0-9@#]+{5,8}" required ></th>
             </tr>
            
-            <tr>
+   <!--          <tr>
                 <th><label for="role">Role:</label></th>
                 <th><input type="text" name="Role" id="name" placeholder="Enter role" pattern = "[a-zA-Z]+{2,20}"required ></th>
-            </tr>
+            </tr> -->
 
             <tr>
                 <th><label for="mobile">Mobile Number:</label></th>
@@ -99,11 +121,61 @@
        
         <table id="buttontable">
             <tr>
-                <td><button type="submit">Click to Register</button></td>
-                  
+                <td><button type="submit">Click to Register</button>
+         <!--       <button class="gl" ><a href="login.jsp"> or LOGIN</a></button></td> -->
+           
+            <div class="options">
+                
+                <button class="gl" ><a href="login.jsp">or Login</a></button>
+            </div>
+               
+               
             </tr>
-        </table>    
+        </table>  
+      
     </fieldset>
     </form>
+    
+   
+<script>  
+function emailvalid()  
+{  
+	console.log("called");
+var email_id = document.getElementById("UserEmail").value;  
+console.log(email);
+
+var url="ExceptionRegister.jsp?email="+email;  
+  
+if(window.XMLHttpRequest){  
+request=new XMLHttpRequest();  
+}  
+else if(window.ActiveXObject){  
+request=new ActiveXObject("Microsoft.XMLHTTP");  
+}  
+  
+try{  
+request.onreadystatechange=getInfo;  
+request.open("GET",url,true);  
+request.send();  
+}catch(e){alert("Unable to connect to server");}  
+}  
+  
+function getInfo(){  
+if(request.readyState==4){  
+var response=request.responseText;  
+document.getElementById('emailresponse').innerHTML=response;  
+}  
+}  
+  
+</script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
 </body>
 </html>
