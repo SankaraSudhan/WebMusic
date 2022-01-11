@@ -112,7 +112,8 @@ top:-25px;
         
 </style>
 </head>
-<body style="background-color: lightblue">
+
+<body style="background: url(Assets/eberhard-grossgasteiger-S-2Ukb_VqpA-unsplash.jpg)">
 
 <div id="nav">
 

@@ -11,7 +11,7 @@
 </head>
 <body>
 <%
-String email = request.getParameter("email_id");  
+String email = request.getParameter("email");  
 try{  
 Class.forName("oracle.jdbc.driver.OracleDriver");  
 Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");  

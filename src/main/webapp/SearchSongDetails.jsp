@@ -18,17 +18,22 @@
         }
  #allsongs {    
         position: absolute;
-        left:130px;
+        left:0px;
         }
    #img{
  height: 80px;
  width: 80px;
  }  
  </style>
-</head>
-<body style="background-color: lightblue">
+ 
 
-		<table border="2" id="allsongs">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+ 
+</head>
+<body style="background: url(Assets/hello-i-m-nik-ZJpjMmc351s-unsplash.jpg)">
+
+		<table class="table table-dark table-striped" id="allsongs">
 			
 			<thead>
 				<tr>

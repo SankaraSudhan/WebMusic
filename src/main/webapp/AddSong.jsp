@@ -7,7 +7,7 @@
 
     <style>
         body{
-            background: url(https://wallpapercave.com/dwp1x/wp1836729.jpg);
+            background: url(https://c1.wallpaperflare.com/preview/162/780/874/cassette-recording-sound-audio.jpg);
             background-size: cover;
             background-repeat: no-repeat ;
             
@@ -41,7 +41,7 @@
             background-color: rgb(20, 250, 123);
         }
         label,h2{
-            color: white;
+            color: black;
         }
         #male{
             margin-left: 0%;
@@ -111,6 +111,13 @@ margin-right:auto;
 }
 
 ::placeholder {
+	color: lightblack;
+	font-size: 13px;
+	height: 30px;
+	font-style: italic;
+}
+
+#search  ::placeholder {
 	color: white;
 	font-size: 13px;
 	height: 30px;

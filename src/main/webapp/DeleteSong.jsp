@@ -111,7 +111,7 @@ top:-25px;
            
 </style>
 </head>
-<body style="background-color: lightblue">
+<body style="background: url(Assets/joanna-kosinska-dka5C8Ct2Fw-unsplash.jpg)">
 	<div id="nav">
 
         <ul type="none">

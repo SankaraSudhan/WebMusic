@@ -112,11 +112,19 @@ margin-right:auto;
 }
 
 ::placeholder {
+	color: lightblack;
+	font-size: 13px;
+	height: 30px;
+	font-style: italic;
+}
+
+#search  ::placeholder {
 	color: white;
 	font-size: 13px;
 	height: 30px;
 	font-style: italic;
 }
+
 
 #allsongs table{
         border: 1px solid black;
@@ -124,6 +132,8 @@ margin-right:auto;
         padding: 2px;
         
         }
+        
+  
         
   #allsongs {    
         position: absolute;

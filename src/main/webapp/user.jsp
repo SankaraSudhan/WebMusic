@@ -248,12 +248,14 @@ margin-right:auto;
 #search  button {
 	position: relative;
 	left: 0px;
-	background-color: DodgerBlue;
+	background-color: skyBlue;
 	border: none;
-	color: white;
+	color: black;
 	padding: 15px 32px;
 	text-align: center;
 	height: 38px;
+	font-family: bold;
+	font-size:15px;
 }
 
 ::placeholder {

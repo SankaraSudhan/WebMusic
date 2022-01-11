@@ -92,10 +92,9 @@
            
             <tr>
                 <th><label for="emailId">Email Id:</label></th>
-                <th><input type="email" name="UserEmail" id="emailId" placeholder="Enter email Id"  required onkeyup="emailvalid()" ></th>
+                <th><input type="email" name="UserEmail" id="emailId" placeholder="Enter email Id"  required  onkeyup="emailvalid()" ></th>
                 
             </tr>
-                    <p id="emailresponse"></p>  
                     
            <tr>
                 <th><label for="name">User Name:</label></th>
@@ -129,22 +128,25 @@
                 <button class="gl" ><a href="login.jsp">or Login</a></button>
             </div>
                
-               
             </tr>
         </table>  
       
     </fieldset>
     </form>
+                   <div style="color: black; font-size:  49px">
+                                                <center> <p id="emailresponse"></p>  </center> 
+               
+               </div>
     
    
 <script>  
 function emailvalid()  
 {  
 	console.log("called");
-var email_id = document.getElementById("UserEmail").value;  
-console.log(email);
+var email_id = document.getElementById("emailId").value;  
+console.log(email_id);
 
-var url="ExceptionRegister.jsp?email="+email;  
+var url="ExceptionRegister.jsp?email="+email_id;  
   
 if(window.XMLHttpRequest){  
 request=new XMLHttpRequest();  

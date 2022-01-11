@@ -69,12 +69,14 @@ margin-right:auto;
 #search  button {
 	position: relative;
 	left: 0px;
-	background-color: DodgerBlue;
+	background-color: skyBlue;
 	border: none;
-	color: white;
+	color: black;
 	padding: 15px 32px;
 	text-align: center;
 	height: 38px;
+	font-family: bold;
+	font-size:15px;
 }
 
 ::placeholder {
@@ -108,6 +110,11 @@ left:0px;
 top:-25px;
 }  
      
+          .gl:hover{
+            background: rgb(109, 216, 235);
+           
+        }
+     
 
 </style>
 </head>
@@ -119,25 +126,25 @@ top:-25px;
             
            
     
-            <li><a href ="ShowUsers.jsp">ManageUsers</a></li>
+            <li><a href ="ShowUsers.jsp"  class="gl">ManageUsers</a></li>
             <li>&nbsp;&nbsp;&nbsp;</li>
               <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="Showsong.jsp">AllSongsList</a></li>
+            <li><a href ="Showsong.jsp"  class="gl">AllSongsList</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="AddSong.jsp">AddSong</a></li>
+            <li><a href ="AddSong.jsp"  class="gl">AddSong</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="UpdateSong.jsp">UpdateSong</a></li>
+            <li><a href ="UpdateSong.jsp"  class="gl">UpdateSong</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="DeleteSong.jsp">ManageSongs</a></li>
+            <li><a href ="DeleteSong.jsp"  class="gl">ManageSongs</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="ShowPlaylist.jsp">AllPlaylist</a></li>
+            <li><a href ="ShowPlaylist.jsp" class="gl">AllPlaylist</a></li>
                  <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="login.jsp">Logout</a></li>
+            <li><a href ="login.jsp"  class="gl">Logout</a></li>
           
         </ul>
         <div id="search">
@@ -161,7 +168,7 @@ objsonglist=libraryDao.showAllSongs();
 
 %>		
  	
-		<h1 id="songlisthead"><b>ADMIN PAGE</b></h1>  
+	<center>	<h1 id="songlisthead"><b>ADMIN PAGE</b></h1>  </center>
 		<table border="2" id="allsongs">
 			
 			<thead>

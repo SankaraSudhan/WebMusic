@@ -1,5 +1,7 @@
 package com.webmusic.controller;
 
+import java.io.PrintWriter;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -56,13 +58,24 @@ public class SwitchUserServlet extends HttpServlet {
 				res.sendRedirect("login.jsp");
 				
 			}
-			else 
-			{
-				res.getWriter().print("can't recharge");
-			}		    
-	        }
+//			else 
+//			{
+//		
+//				res.sendRedirect("Wallet.jsp");
+//	        }
+//	       
+			}
 	        else {
-	        	res.sendRedirect("Wallet.jsp");
+               PrintWriter write = res.getWriter();			
+				
+				String someMessage = "Not Having Sufficient Amount !";
+				write.println("<script type='text/javascript'>");
+				write.println("alert(" + "'" + someMessage + "'" + ");</script>");
+				write.println("</head><body></body></html>");
+				System.out.println("inside  111");
+	        	
+		       	res.sendRedirect("Wallet.jsp");
+
 	        }
 			} catch (Exception e) {
 				System.out.println(e.getMessage());

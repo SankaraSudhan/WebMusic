@@ -7,7 +7,7 @@
 
     <style>
         body{
-            background: url(https://c4.wallpaperflare.com/wallpaper/331/308/999/headphones-music-minimalism-wallpaper-preview.jpg);
+            background: url(Assets/guillaume-techer-Jm9P0mDPo6A-unsplash.jpg);
             background-size: cover;
             background-repeat: no-repeat ;
             
@@ -109,6 +109,13 @@ margin-right:auto;
 
 ::placeholder {
 	color: lightblack;
+	font-size: 13px;
+	height: 30px;
+	font-style: italic;
+}
+
+#search  ::placeholder {
+	color: white;
 	font-size: 13px;
 	height: 30px;
 	font-style: italic;

@@ -7,7 +7,7 @@
 
     <style>
         body{
-            background: url(https://c4.wallpaperflare.com/wallpaper/949/575/798/headphones-music-audifonos-wallpaper-preview.jpg);
+            background: url(Assets/markus-spiske-hU9gx8YfVK4-unsplash.jpg);
             background-size: cover;
             background-repeat: no-repeat ;
             
@@ -41,7 +41,7 @@
             background-color: rgb(20, 250, 123);
         }
         label,h2{
-            color: white;
+            color: black;
         }
         #male{
             margin-left: 0%;
@@ -109,6 +109,14 @@ margin-right:auto;
 }
 
 ::placeholder {
+	color: lightblack;
+	font-size: 13px;
+	height: 30px;
+	font-style: italic;
+}
+
+
+#search  ::placeholder {
 	color: white;
 	font-size: 13px;
 	height: 30px;
@@ -195,12 +203,12 @@ top:-25px;
         
             <tr>
                 <th><label for="SongTitle">Song Title:</label></th>
-                <th><input type="text" name="SongTitle" id="SongTitle" placeholder="Enter Song Id" required ></th>
+                <th><input type="text" name="SongTitle" id="SongTitle" placeholder="Enter Song name" required ></th>
             </tr>
        
             <tr>
                 <th><label for="PlaylistTitle">Playlist Title:</label></th>
-                <th><input type="text" name="PlaylistTitle" id="PlaylistTitle" placeholder="Enter Song Title" required ></th>
+                <th><input type="text" name="PlaylistTitle" id="PlaylistTitle" placeholder="Enter playlist Title" required ></th>
             </tr>
            
    
