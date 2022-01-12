@@ -26,11 +26,7 @@ public class SwitchUserServlet extends HttpServlet {
 	        if(amount>=150) {
 	        	
 	        	
-	        
-	        
-			///int i=userDao.UpdateUserWallet(user);
-			
-			
+	       
 				
 				
 				UserInfoDao userdao=new UserInfoDao();

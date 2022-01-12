@@ -114,7 +114,7 @@ top:-25px;
      
 </style>
 </head>
-<body style="background-color: lightblue">
+<body style="background: url(Assets/adrian-korte-5gn2soeAc40-unsplash.jpg)">
 <div id="nav">
 
         <ul type="none">

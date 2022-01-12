@@ -115,6 +115,13 @@ margin-right:auto;
 	font-style: italic;
 }
 
+#search  ::placeholder {
+	color: white;
+	font-size: 13px;
+	height: 30px;
+	font-style: italic;
+}
+
 #allsongs table{
         border: 1px solid black;
         border-collapse: collapse;
@@ -137,6 +144,13 @@ position: absolute;
 left:0px;
 top:-25px;
 }  
+
+#addsongs{
+position: absolute;
+top:70px;
+}
+ 
+       
            
     </style>
 </head>
@@ -179,7 +193,7 @@ top:-25px;
             
             
 	<form action="recharge">
-    <fieldset class="signup">
+    <fieldset class="signup" id="addsongs">
        <center><h2>Recharge Wallet here!</h2></center>
 
         <table id="signuptable" style="border-spacing: 5px;">

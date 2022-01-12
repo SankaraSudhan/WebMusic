@@ -42,13 +42,7 @@ public class DeleteUserServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-//		try {
-//			boolean b=userdao.delete(UserName);
-//			if(b==true)
-//			{
-//				System.out.println(" user is deleted");
-//				
-//			}
+
 		if(userdao!=null) {
 			System.out.println(" user is deleted");
 			response.sendRedirect("Admin.jsp");
@@ -59,12 +53,6 @@ public class DeleteUserServlet extends HttpServlet {
 		
 		
 		
-//		catch (ClassNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (SQLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
 		}
 	
 

@@ -111,7 +111,7 @@ margin-right:auto;
 }
 
 ::placeholder {
-	color: lightblack;
+	color: black;
 	font-size: 13px;
 	height: 30px;
 	font-style: italic;
@@ -150,10 +150,7 @@ top:-25px;
 position: absolute;
 top:70px;
 }
-#addsongs input{
-background-color: transparent;
-
-}     
+ 
       
     </style>
 </head>
@@ -221,7 +218,7 @@ background-color: transparent;
                     
            <tr>
                 <th><label for="Album">Album:</label></th>
-                <th><input type="text" name="Album" id="Album" placeholder="Enter Album Name" pattern = "[a-zA-Z]{3,30}" required ></th>
+                <th><input type="text" name="Album" id="Album" placeholder="Enter Album Name" pattern = "[a-zA-Z]+{3,30}" required ></th>
             </tr>
             
                                   

@@ -17,7 +17,7 @@
         }
          #allplaylist{    
         position: absolute;
-        left:60px;
+        left:90px;
         }
         
                     ul {
@@ -45,7 +45,7 @@ color:white;
 text-decoration: none;
 }
 table.center{
-margin-left:300px;
+margin-left:200px;
 margin-right:auto;
 }
  #search {
@@ -152,12 +152,7 @@ top:-25px;
  
 <div><img id="logo" src="Assets/MWlogoo.png"></div>
 
-
-
-
-		
-		
-		
+	
 		<table border="2" id="allplaylist">
 			<h1><b><center>Delete Playlist</center></b></h1>
 			<thead>
@@ -182,13 +177,13 @@ top:-25px;
 						
 						for (int i = 0; i<deletePlaylist.size(); i++){
 							Playlist playlist = deletePlaylist.get(i);
-							
+							int j=i+1;
 						
 				%>
 				<tr>
 				
 					
-					<td><%=i%></td>
+					<td><%=j%></td>
 					<td><%=playlist.getSong()%></td>
 					<td name="playlist_title"><%=playlist.getPlaylistTitle()%></td>				
 					<td name="email_id"><%=playlist.getEmailId()%></td>				

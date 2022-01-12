@@ -33,9 +33,7 @@ public class UpdateUserServlet extends HttpServlet {
 			String password = req.getParameter("UserPassword");
 			System.out.println(password);
             
-//			String role = req.getParameter("Role");
-//			System.out.println(role);
-//			
+
 			long mboNum = Long.parseLong(req.getParameter("MobileNumber"));
 			System.out.println(mboNum);
 

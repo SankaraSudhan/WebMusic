@@ -25,14 +25,10 @@ public class AddPlaylist extends HttpServlet {
 			String songTitle = req.getParameter("SongTitle");
 			System.out.println(songTitle);
 			
-//			int playlistId = Integer.parseInt(req.getParameter("PlaylistId"));
-//			System.out.println(playlistId);
-			
+
 			String playlistTitle = req.getParameter("PlaylistTitle");
 			System.out.println(playlistTitle);
-			
-//		System.out.println(email);
-//			email = email.trim().toLowerCase();
+
 			LibraryDao libDao = new  LibraryDao();
 			Library lib=libDao.findSong(songTitle);
 			HttpSession session = req.getSession();

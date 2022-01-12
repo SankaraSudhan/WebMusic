@@ -113,7 +113,7 @@ top:-25px;
 </style>
 </head>
 
-<body style="background: url(Assets/eberhard-grossgasteiger-S-2Ukb_VqpA-unsplash.jpg)">
+<body style="background: url(Assets/joanna-kosinska-dka5C8Ct2Fw-unsplash.jpg.jpg)">
 
 <div id="nav">
 
@@ -153,14 +153,6 @@ top:-25px;
     </div>
  
 <div><img id="logo" src="Assets/MWlogoo.png"></div>
-
-
-
-
-
-
-
-
 
 
 <%		PlaylistDao playlistDao = new PlaylistDao();

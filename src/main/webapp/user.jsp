@@ -1,5 +1,4 @@
-
-    <%@page import="javax.swing.text.Document"%>
+ <%@page import="javax.swing.text.Document"%>
 <%@page import="com.webmusic.model.UserInfo"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -7,190 +6,6 @@
     <%@page import="java.util.List"%>
             <%@page import="com.webmusic.DaoImpl.LibraryDao"%>
  
-<%-- <!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>user home page</title>
-<style>
-#allsongs table,th,tr,td{
-        border: 1px solid black;
-        border-collapse: collapse;
-         text-align: center;
-        padding: 10px;
-        }
-       body {
-  margin: 0;
-  font-family: "Lato", sans-serif;
-}
-
-.sidebar {
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  background-color: lightblue;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
-}
-
-.sidebar a {
-  display: block;
-  color: black;
-  padding: 16px;
-  text-decoration: none;
-}
- 
-.sidebar a.active {
-  background-color: lightblue;
-  color: lightblue;
-}
-
-.sidebar a:hover:not(.active) {
-  background-color: lightblue;
-  color: white;
-}
-
-div.content {
-  margin-left: 200px;
-  padding: 1px 16px;
-  height: 1000px;
-}
-
-@media screen and (max-width: 700px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-  .sidebar a {float: left;}
-  div.content {margin-left: 0;}
-}
-
-@media screen and (max-width: 400px) {
-  .sidebar a {
-    text-align: center;
-    float: none;
-  }
-}
-table.center{
-margin-left:300px;
-margin-right:auto;
-}
- .SearchBar {
-                position: absolute;
-                top: 100px;
-                left: 575px;
-                height: 200px;
-                width: 200px;
-                }
-
-#allsongs table,th,tr,td{
-        border: 1px solid black;
-        border-collapse: collapse;
-        padding: 2px;
-        
-        }
-        
-  #allsongs {    
-        position: absolute;
-        left:200px;
-        }
- #img{
- height: 80px;
- width: 80px;
- }     
-#logo{
-width:130px;
-position: absolute;
-right:0px;
-top:0px;
-}  
-
-</style>
-</head>
-<body style="background-color: lightblue">
-<div class="sidebar">
-  <a href="ShowSongUser.jsp">SongList</a>
-  <a href="Wallet.jsp">Recharge Wallet</a>
-  <a href="SwitchPremium.jsp">Switch to Premium</a>
-  <a href="UpdateUser.jsp">Update Details</a>
-</div> 
-<div><img id="logo" src="Assets/MWlogo.png"></div>
-<div class="SearchBar">
-<form action="Search" method="get" style="text-align: center;">
-
-<input type="text" name = "Song_Title"  placeholder="search by songTitle,album,artist,genre,language">
-
-<button type="submit">Search</button>
-</form>
-</div>
-<% UserInfo uinfo =(UserInfo) session.getAttribute("currentUser");
-%>
-<p style="text-align: center;" id="user" >Welcome <%= uinfo.getFirstName() %></p>
-<%
-LibraryDao libraryDao = new   LibraryDao();
-List<Library> objsonglist = (List<Library>)request.getAttribute("allSongs");
-objsonglist=libraryDao.showAllSongs();
-
-%>		
- 	
-		<h1 id="songlisthead"><b>-  </b></h1>
-		<table border="2" id="allsongs">
-			
-			<thead>
-				<tr>
-				   
-					<th>Song_id</th>
-					<th>Song_title</th>
-					<th>Artists</th>
-					<th>Album</th>
-					<th>Genre</th>
-					<th>Language</th>
-					<th>Play_Song</th>
-					<th>Image_Song </th>								
-					</tr>
-			</thead>
-			<br>
-			<br>
-			
-						<tbody>
-				<% 
-					int i = 0;
-					for (Library objbook : objsonglist) {
-						i++;
-						
-						%>
-				<tr>
-				
-					
-					
-					<td><%=objbook.getSongId()%></td>
-					<td><%=objbook.getSongTitle()%></td>				
-					<td><%=objbook.getArtists()%></td>				
-					<td> <%=objbook.getAlbum()%></td>
-					<td> <%=objbook.getGenre()%></td>
-					<td> <%=objbook.getLanguage()%></td>
-					<td>
-					<audio  controls>
-					<source src="Assets/<%=objbook.getSongFile() %>" >
-					</audio>
-					</td>
-					<td><img id="img" src="Assets/<%=objbook.getSongImage() %>"></td>
-			</tr>
-					
-					<%
-				}
-				%>
-					</tbody>
-		           </table>
-			
-	
-			
-</body>
-</html> --%>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -224,10 +39,7 @@ text-decoration: none;
 }
 
 
-table.center{
-margin-left:300px;
-margin-right:auto;
-}
+
  #search {
 	position: absolute;
 	top: 15px;
@@ -317,71 +129,61 @@ left: 145px;
         }
 
 
-
-
-/* 
-
-*style{
-margin:0;
-padding:0;
-}
-body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url("image/");
-    font-size:13.5px;
-}
-  ul
-  {
-        list-style: none;
-        background-color: #1c1c1c;
-        margin:0;
-    }
-  li{
-      display:inline-block;
-      padding-top: 13px;
-      padding-bottom: 13px;
-      text-align: center;
-      font-size: 15px;
-  }
-  li a{
-      text-decoration: none;
-      font-weight:bold;
-      color:white;
-      display:block;
-      padding-right: 7px;
-      padding-left: 7px;
-  }
-  li button{
-      margin-right: 500px;
-  }
-  .text{
-        margin-right: 20px;
-  }
-img 
-{
-height:210px;
-width:250px;
-overflow:hidden;
-padding-top:60px;
-padding-bottom:33px;
-}
-.names{
-position : relative;
-top:180px;
-left: -250px;
-width: 200%;
-padding-bottom:30px;
+ 
+ #songs {
+	margin-left: 45px;
+	margin-top: 20px;
+	line-height: 2;
+	font-size: 20px;
 }
 
+#songs p {
+	margin-left: 10px;
+	font-weight: bold;
+}
 
- */
+#songs button {
+	margin-left: 10px;
+	margin-top: 5px;
+	width: 120px;
+	height: 30px;
+	background-color: rgb(16, 177, 16);
+	border-radius: 10px;
+	border: none;
+	color: white;
+	font-size: 17px;
+	font-weight: bold;
+	box-shadow: 0 0 5px black;
+}
 
+#songs button:hover {
+	background-color: white;
+	color: black;
+}
+
+#songs img {
+	width: 350px;
+	height: 280px;
+	border-radius: 10px;
+	box-shadow: 0 0 7px black;
+}
+
+#songdetails {
+	width: 70px;
+	
+}
+ 
+table{
+margin-left:50px;
+margin-right:auto;
+text-align: center;
+}
      
 
 </style>
 </head>
 <body>
-<body style="background: url(Assets/resul-mentes-DbwYNr8RPbg-unsplash.jpg)">
+<body style="background-color: lightblue ">
 <div id="nav">
 
         <ul type="none">
@@ -461,8 +263,7 @@ objsonglist=libraryDao.showAllSongs();
                 <img src="Assets/marshmello.jpg" style="width:80%">
               </div>
     
-     
-    
+       
         
             </div>
     </div>
@@ -470,106 +271,59 @@ objsonglist=libraryDao.showAllSongs();
 
  	<p style="text-align: center;" id="user" >Welcome <%= uinfo.getFirstName() %></p>
  	
- 	
- 	
- 	<!-- 
-		<h1 id="songlisthead"><b>User page</b></h1>   -->
-		<table border="2" id="allsongs">
+ 
 	
-	
-	
-	
-			
-			<thead>
+		<table>
+			<tbody>
 				<tr>
-				  
-		<!-- 			<th>Song_id</th> -->
-					<th>Song_title</th>
-	<!-- 				<th>Artists</th>
-					<th>Album</th>
-					<th>Genre</th>
-					<th>Language</th>
-				 -->	<th>Play_Song</th>
-					<th>Image_Song </th>								
-					</tr>
-			</thead>
-			<br>
-			<br>
-			
-						<tbody>
-				<% 
-					int i = 0;
-					for (Library objbook : objsonglist) {
-						i++;
-						
-						%>
-				<tr>
-				
-					
-					
-	<%-- 				<td><%=objbook.getSongId()%></td> --%>
-					<td><%=objbook.getSongTitle()%></td>				
-		<%-- 			<td><%=objbook.getArtists()%></td>				
-					<td> <%=objbook.getAlbum()%></td>
-					<td> <%=objbook.getGenre()%></td>
-					<td> <%=objbook.getLanguage()%></td>
-			 --%>		<td>
-					<audio  controls>
-					<source src="Assets/<%=objbook.getSongFile() %>" >
-					</audio>
-					</td>
-					<td><img id="img" src="Assets/<%=objbook.getSongImage() %>"></td>
-			</tr>
-					
 					<%
-				}
-				%>
-					</tbody>
-		           </table>
-			
-	
-	
- 	<%-- 
-		
-	
-		 <table id="allsongs">
-				<% 
 					int count = 0;
-					for (Library objbook : objsonglist) {
-											
-						%>
-				
-				 
-                       
-                            <tbody>
-				
-			<tr>
-					<td>					
-					<audio  controls>
-					<source src="Assets/<%=objbook.getSongFile() %>" >
-					</audio></td>
-					
-					<td><img id="img" src="Assets/<%=objbook.getSongImage() %>"></td>
-			</tr>
-					</tbody>
-					</table>
-					 </td>
-                       <% count ++;
-                       if(count==2){ %>
-                      
-                      </tr>              
-                     <%count=0; }}%> 
-					</tr>
-	               </tbody>
-		           </table>
-			 --%>
+					for (Library library : objsonglist) {
+					%>
+					<td>
+						<table id="songs">
+							<tbody>
+								<tr>
+									<td><img src="Assets/<%=library.getSongImage()%>"
+										alt="songimage"></td>
+								</tr>
+								<tr>
+									<td id="songdetails">
+									<%=	library.getSongTitle() %>
+									</td>
+								</tr>
+								<tr>
+									<td>
+									<audio  controls>
+					                <source src="Assets/<%=library.getSongFile() %>" >
+				                  	</audio>	
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+
+					</td>
+					<%
+					count++;
+					if (count == 3) {
+					%>
+				</tr>
+				<tr>
+					<%
+					count = 0;
+					}
+					}
+					%>
+
+				</tr>
+			</tbody>
+		</table>
 	
-			
+	
 </body>
 </html>
-			
-			
-			
+		
 			
 </body>
 </html>
@@ -589,7 +343,7 @@ function showSlides() {
 
   slides[slideIndex-1].style.display = "block";  
   
-  setTimeout(showSlides, 2500); // Change image every 2 seconds
+  setTimeout(showSlides, 2500); // Change image every 2.5 seconds
 }
 </script>
 

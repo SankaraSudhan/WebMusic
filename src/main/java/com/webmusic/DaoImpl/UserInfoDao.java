@@ -149,7 +149,7 @@ public class UserInfoDao {
 //				wallet = rs.getDouble(1);
 //			}
 //			System.out.println(wallet + "wallet is found!!");
-			user.setWallet(user.getWallet()-150);
+			user.setWallet(user.getWallet()-250);
 			UpdateUserWallet(user);
 			PreparedStatement updateUser = con.prepareStatement(query);
 			

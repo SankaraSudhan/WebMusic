@@ -14,6 +14,8 @@ import javax.servlet.http.HttpSession;
 
 import com.webmusic.DaoImpl.LibraryDao;
 import com.webmusic.model.Library;
+import com.webmusic.model.UserInfo;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class SearchSongServlet
@@ -27,7 +29,10 @@ public class SearchSongServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
-	{	try {
+	{	
+		HttpSession session = request.getSession();
+		
+		try {
 		String songname = request.getParameter("Song_Title");
 		
 		System.out.println("Completed 1"+songname);
@@ -35,9 +40,7 @@ public class SearchSongServlet extends HttpServlet {
 
 	   
 		 List<Library> songtitle = song.searchsongs();
-//		 for(int k=0; k<songtitle.size(); k++) {
-//			 System.out.println(songtitle.get(k));
-//		 }
+
 		  List<Library> showList = new ArrayList<Library>();
 		 
 		 for(int i =0; i<songtitle.size(); i++) {
@@ -59,8 +62,10 @@ public class SearchSongServlet extends HttpServlet {
 		}else if(search.getLanguage().equalsIgnoreCase(songname)) {
 			System.out.println("song lang"+search);
 			showList.add(search);
+		}else
+		{
+			response.getWriter().print("No song found..!!!");
 		}
-		 
 			 for(int j=0;j<showList.size();j++) {
 			 
 			 Library liObj = showList.get(j);
@@ -71,13 +76,10 @@ public class SearchSongServlet extends HttpServlet {
 		 }
 
 		
-		HttpSession session = request.getSession();
-		
 		
 		session.setAttribute("songname",showList );
 		
-		System.out.println("COmpleted 21212112");
-		
+
 		response.sendRedirect("SearchSongDetails.jsp");
 	} catch (Exception e) {
 		// TODO Auto-generated catch block

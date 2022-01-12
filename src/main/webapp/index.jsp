@@ -92,7 +92,7 @@
            
             <tr>
                 <th><label for="emailId">Email Id:</label></th>
-                <th><input type="email" name="UserEmail" id="emailId" placeholder="Enter email Id"  required  onkeyup="emailvalid()" ></th>
+                <th><input type="email" name="UserEmail" id="emailId" placeholder="Enter email Id"  pattern = "[a-z0-9]+[@][a-z]+[.][a-z]+{2,5}" required  onkeyup="emailvalid()" ></th>
                 
             </tr>
                     
@@ -170,14 +170,6 @@ document.getElementById('emailresponse').innerHTML=response;
 }  
   
 </script>
-    
-    
-    
-    
-    
-    
-    
-    
     
 </body>
 </html>

@@ -12,7 +12,10 @@
 <meta charset="ISO-8859-1">
 <title>Admin page</title>
 <style>
-ul {
+.navs{
+width: 1345px;
+}
+.navs ul {
             margin: 0;
             overflow: hidden;
             background-color:black;
@@ -22,13 +25,13 @@ ul {
             opacity: 0.5px;
         }
 
-        li {
+     .navs li {
             float: left;
             color: black;
         }
 
 
-a{
+.navs a{
 color:white;
 text-decoration: none;
 }
@@ -95,7 +98,7 @@ margin-right:auto;
         
   #allsongs {    
         position: absolute;
-        left:200px;
+        left:0px;
         }
  #img{
 
@@ -117,10 +120,19 @@ top:-25px;
      
 
 </style>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
 <body>
-<body style="background-color: lightblue ">
-<div id="nav">
+ <body style="background-color: lightblue "> 
+
+
+
+
+<div class="navs">
 
         <ul type="none">
             
@@ -168,18 +180,18 @@ objsonglist=libraryDao.showAllSongs();
 
 %>		
  	
-	<center>	<h1 id="songlisthead"><b>ADMIN PAGE</b></h1>  </center>
-		<table border="2" id="allsongs">
-			
+	<center>	<h2 id="songlisthead"><b>ADMIN PAGE</b></h2>  </center>
+		<!-- <table border="2" id="allsongs"> -->
+			<table class="table table-dark table-hover" id="allsongs">
 			<thead>
 				<tr>
 				  
-					<th>Song_id</th>
+					<!-- <th>Song_id</th> -->
 					<th>Song_title</th>
-					<th>Artists</th>
+				<!-- 	<th>Artists</th>
 					<th>Album</th>
 					<th>Genre</th>
-					<th>Language</th>
+					<th>Language</th> -->
 					<th>Play_Song</th>
 					<th>Image_Song </th>								
 					</tr>
@@ -198,12 +210,12 @@ objsonglist=libraryDao.showAllSongs();
 				
 					
 					
-					<td><%=objbook.getSongId()%></td>
+				<%-- 	<td><%=objbook.getSongId()%></td> --%>
 					<td><%=objbook.getSongTitle()%></td>				
-					<td><%=objbook.getArtists()%></td>				
+			<%-- 		<td><%=objbook.getArtists()%></td>				
 					<td> <%=objbook.getAlbum()%></td>
 					<td> <%=objbook.getGenre()%></td>
-					<td> <%=objbook.getLanguage()%></td>
+					<td> <%=objbook.getLanguage()%></td> --%>
 					<td>
 					<audio  controls>
 					<source src="Assets/<%=objbook.getSongFile() %>" >

@@ -7,7 +7,7 @@
 
     <style>
         body{
-            background: url(https://wallpapercave.com/dwp1x/sN6S7Xu.jpg);
+            background: url(Assets/guillaume-techer-Jm9P0mDPo6A-unsplash.jpg);
             background-size: cover;
             background-repeat: no-repeat ;
             
@@ -75,6 +75,11 @@
 color:white;
 text-decoration: none;
 }
+
+ a {
+color:black;
+text-decoration: none;
+}
 table.center{
 margin-left:300px;
 margin-right:auto;
@@ -114,6 +119,12 @@ margin-right:auto;
 	height: 30px;
 	font-style: italic;
 }
+#search  ::placeholder {
+	color: white;
+	font-size: 13px;
+	height: 30px;
+	font-style: italic;
+}
 
 #allsongs table{
         border: 1px solid black;
@@ -137,6 +148,12 @@ position: absolute;
 left:0px;
 top:-25px;
 }  
+
+#addsongs{
+position: absolute;
+top:70px;
+}
+ 
        
         
     </style>
@@ -181,17 +198,17 @@ top:-25px;
             
 
 	<form action="switch">
-    <fieldset class="signup">
+    <fieldset class="signup" id="addsongs">
     <br><br>
     <br><br>
        <center><h2>Subscribe here to switch premium!</h2></center>
 
         <table id="signuptable" style="border-spacing: 5px;">
         <br>
-          <center><h3> Pay 150Rs for premium</h3></center>  
+          <center><h3> Pay 250Rs for premium</h3></center>  
         <table id="buttontable">
             <tr>
-                <td><button><a href="switch">Subscribe</a></button></td>
+                <td><button><a href="switch" class="switch">Subscribe</a></button></td>
                   
             </tr>
         </table>    

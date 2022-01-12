@@ -58,22 +58,7 @@ public UserInfo login(String emailId, String Password) throws ClassNotFoundExcep
 			System.out.println(rs.getLong(7));
 		admin=new Admin(rs.getString(3), rs.getString(5), rs.getLong(7));
 		}
-//		if(rs!=null)
-//		{
-//			while(rs.next())
-//			{
-//				adm = rs.getString("Role");
-//				
-//				if(adm.equalsIgnoreCase("admin"))
-//				{
-//					admin=new Admin(rs.getString(3), rs.getString(5), rs.getLong(7));
-//					
-//				}
-//				
-//			}
-//		}
 
-	   
 	   
 	return admin;
 	   

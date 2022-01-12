@@ -110,7 +110,7 @@ top:-25px;
         
 </style>
 </head>
-<body  style="background-color: lightblue">
+<body style="background: url(Assets/alex-padurariu-ZR48YvUpk04-unsplash.jpg)">
 <div id="nav">
 
         <ul type="none">
@@ -183,12 +183,12 @@ top:-25px;
 						
 				for (int i = 0; i<userList.size(); i++){
 					UserInfo userinfo = userList.get(i);
-					
+					int j=i+1;
 				%>
 				<tr>
 				
 					
-					<td><%=i%></td>
+					<td><%=j%></td>
 					<td><%=userinfo.getFirstName()%></td>
 					<td><%=userinfo.getLastName()%></td>				
 					<td><%=userinfo.getEmailId()%></td>				

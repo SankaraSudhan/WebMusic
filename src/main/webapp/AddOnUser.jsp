@@ -143,7 +143,11 @@ position: absolute;
 left:0px;
 top:-25px;
 }  
-         
+         #addsongs{
+position: absolute;
+top:70px;
+}
+ 
         
         
         
@@ -188,7 +192,7 @@ top:-25px;
  
 <div><img id="logo" src="Assets/MWlogoo.png"></div>
             
-	<form action="addOnUser">
+	<form action="addOnUser" id="addsongs">
     <fieldset class="signup">
     <br><br>
        <center><h2>Add On User to share Premium account</h2></center>

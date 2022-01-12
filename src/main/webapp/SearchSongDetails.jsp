@@ -3,7 +3,7 @@
                <%@page import="com.webmusic.model.Library"%>
     <%@page import="java.util.*"%>
             <%@page import="com.webmusic.DaoImpl.LibraryDao"%>
- 
+ <%@page import="com.webmusic.model.UserInfo"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,7 +33,9 @@
 </head>
 <body style="background: url(Assets/hello-i-m-nik-ZJpjMmc351s-unsplash.jpg)">
 
-		<table class="table table-dark table-striped" id="allsongs">
+
+
+		<table class="table table-dark table-hover" id="allsongs">
 			
 			<thead>
 				<tr>

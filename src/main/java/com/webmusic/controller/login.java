@@ -28,7 +28,7 @@ public class login extends HttpServlet{
 		LoginDao loginDao = new LoginDao();
 		try 
 		{
-			//Ad = loginDao.login(uname, password);
+			
 			
 			
 				Admin admin = loginDao.Checkadmin(uname, password);
@@ -64,11 +64,7 @@ public class login extends HttpServlet{
 				
 					
 				
-//			}
-//			else
-//			{
-//				res.getWriter().print("Please Register..!");
-//			}
+
 		}
 				
 	

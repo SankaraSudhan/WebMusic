@@ -109,11 +109,18 @@ margin-right:auto;
 }
 
 ::placeholder {
-	color: lightblack;
+	color: black;
 	font-size: 13px;
 	height: 30px;
 	font-style: italic;
 }
+#search  ::placeholder {
+	color: white;
+	font-size: 13px;
+	height: 30px;
+	font-style: italic;
+}
+
 
 #allsongs table{
         border: 1px solid black;
@@ -141,7 +148,7 @@ top:-25px;
 position: absolute;
 top:70px;
 }
-      
+    
     
         
     </style>
@@ -188,7 +195,7 @@ top:70px;
 
 
 
-	<form action="UpdateSong">
+	<form action="UpdateSong" id="addsongs">
     <fieldset class="signup">
        <center><h2>Update Song details here!</h2></center>
 

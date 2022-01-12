@@ -145,7 +145,10 @@ position: absolute;
 left:0px;
 top:-25px;
 }  
-         
+    #addsongs{
+position: absolute;
+top:70px;
+}     
         
         
         
@@ -194,7 +197,7 @@ top:-25px;
 
 
 	<form action="addPlaylist">
-    <fieldset class="playlistadd">
+    <fieldset class="playlistadd"  id="addsongs">
     
     <br><br>
        <center><h2>Add Playlist</h2></center>

@@ -94,7 +94,7 @@ margin-right:auto;
         
   #allsongs {    
         position: absolute;
-        left:200px;
+        left:300px;
         }
  #img {
 
