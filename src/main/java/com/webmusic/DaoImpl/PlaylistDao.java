@@ -12,12 +12,13 @@ import java.util.Scanner;
 
 import org.apache.tomcat.jni.Library;
 
+import com.webmusic.Dao.PlaylistInterface;
 import com.webmusic.model.Playlist;
 import com.webmusic.model.UserInfo;
 import com.webmusic.util.ConnectionUtil;
 
 
-public class PlaylistDao {
+public class PlaylistDao implements PlaylistInterface{
 	// Add playlist
 	public void insertPlaylist(Playlist playlist) throws ClassNotFoundException, SQLException {
 		

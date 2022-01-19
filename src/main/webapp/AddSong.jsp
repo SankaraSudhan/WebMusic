@@ -237,7 +237,7 @@ top:70px;
                 <th><input type="file" name="addSong" id="importSong"  required></th>
             </tr>     
               <tr>
-                <th><label for="imageSong">Add song to database:</label></th>
+                <th><label for="imageSong">Add image to database:</label></th>
                 <th><input type="file" name="imgSong" id="imageSong"  required></th>
             </tr>         
        </table>

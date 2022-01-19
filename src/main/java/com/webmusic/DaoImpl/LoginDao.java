@@ -6,12 +6,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import com.webmusic.Dao.LoginInterface;
 import com.webmusic.model.Admin;
 import com.webmusic.model.UserInfo;
 import com.webmusic.util.ConnectionUtil;
 
 
-public class LoginDao {
+public class LoginDao implements LoginInterface{
 public UserInfo login(String emailId, String Password) throws ClassNotFoundException, SQLException 
 {
 	Connection con = ConnectionUtil.getDBconnect();

@@ -5,11 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import com.webmusic.Dao.UserInfoInterface;
 import com.webmusic.model.UserInfo;
 import com.webmusic.util.ConnectionUtil;
 
 
-public class UserInfoDao {
+public class UserInfoDao implements UserInfoInterface{
 
 	// Add user using insert method
 	public void insertUser(UserInfo str) throws ClassNotFoundException, SQLException {
@@ -102,7 +103,7 @@ public class UserInfoDao {
     
 	// Recharge Wallet
 	public int UpdateUserWallet(UserInfo user) {
-		String query = "update user_info set user_wallet=? where email_id=? ";
+		String query = "update user_info set user_wallet= user_wallet + ? where email_id=? ";
 		//String getWalletQuery = "select user_wallet from user_info where email_id=?";
 		Connection con;
 		int i = 0;

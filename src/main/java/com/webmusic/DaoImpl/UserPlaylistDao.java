@@ -5,11 +5,12 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import com.webmusic.Dao.UserPlaylistInterface;
 import com.webmusic.model.UserPlaylist;
 import com.webmusic.util.ConnectionUtil;
 
 
-public class UserPlaylistDao {
+public class UserPlaylistDao implements UserPlaylistInterface {
 		public void insertUserPlaylistDao() throws ClassNotFoundException, SQLException {
 				
 			boolean flagCheck =false;

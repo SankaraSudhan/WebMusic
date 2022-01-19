@@ -44,7 +44,7 @@ public class AddSongs extends HttpServlet {
 			LibraryDao sad = new LibraryDao();
 				sad.insertLibrary(library);
 				if(sad!=null) {
-					res.sendRedirect("Admin.jsp");
+					res.sendRedirect("Showsong.jsp");
 				}else
 				{
 					res.getWriter().print("Song is not added");

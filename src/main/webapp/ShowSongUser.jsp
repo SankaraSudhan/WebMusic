@@ -12,7 +12,11 @@
 <meta charset="ISO-8859-1">
 <title>User all songlist page</title>
 <style>
-ul {
+     
+      .navs{
+width: 1345px;
+}
+#navs ul {
             margin: 0;
             overflow: hidden;
             background-color:black;
@@ -22,13 +26,13 @@ ul {
             opacity: 0.5px;
         }
 
-        li {
+     #navs li {
             float: left;
             color: black;
         }
 
 
-a{
+#navs a{
 color:white;
 text-decoration: none;
 }
@@ -63,17 +67,20 @@ margin-right:auto;
 	outline: none;
 	background-color:transparent;
 	font-size: 18px;
+	color: white;
 }
 
 #search  button {
 	position: relative;
 	left: 0px;
-	background-color: DodgerBlue;
+	background-color: skyBlue;
 	border: none;
-	color: white;
+	color: black;
 	padding: 15px 32px;
 	text-align: center;
 	height: 38px;
+	font-family: bold;
+	font-size:15px;
 }
 
 ::placeholder {
@@ -92,7 +99,7 @@ margin-right:auto;
         
   #allsongs {    
         position: absolute;
-        left:200px;
+        left:0px;
         }
  #img{
 
@@ -106,13 +113,24 @@ position: absolute;
 left:0px;
 top:-25px;
 }  
+     .gl:hover{
+            background: rgb(109, 216, 235);
+           
+        }
+     
      
 
 </style>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
 </head>
 <body>
 <body style="background-color: lightblue ">
-<div id="nav">
+<div id="navs">
 
         <ul type="none">
             
@@ -155,8 +173,10 @@ objsonglist=libraryDao.showAllSongs();
 
 %>		
  	
-		<table border="2" id="allsongs">
-			<h1><b><center>All Songs List</center></b></h1>
+	<!-- 	<table border="2" id="allsongs"> -->
+	<br><br>
+			<h2><b><center>All Songs List</center></b></h2>
+			<table class="table table-hover" id="allsongs">
 			<thead>
 				<tr>
 				  

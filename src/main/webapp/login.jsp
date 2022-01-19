@@ -159,6 +159,11 @@
 </head>
 
 <body>
+    <%String message=(String) session.getAttribute("errors");
+    if(message!=null){
+    %>
+   <center><h2><%=message %></h2></center>
+    <%} %>
     <div class="background"></div>
     <div class="container">
         
@@ -169,14 +174,14 @@
                 <span class="material-icons-outlined">
                     
                     </span>
-                <input type="text" name="text" id="text" placeholder="Enter Email Id" pattern = "[a-z0-9]+[@][a-z]+[.][a-z]+{2,5}" required>
+                <input type="text" name="text" id="text" placeholder="Enter Email Id" pattern = "[a-z0-9]+[@][a-z]+[.][a-z]{2,5}" required>
             </div>
 
             <div class="form-item">
                 <span class="material-icons-outlined">                   
                     
                     </span>
-                <input type="password" name="pass" id="pass" placeholder="Enter Password" pattern = "[a-zA-Z0-9@#]+{5,8}" required >
+                <input type="password" name="pass" id="pass" placeholder="Enter Password" pattern = "[a-zA-Z0-9@#]{5,8}" required >
 
             </div>
 

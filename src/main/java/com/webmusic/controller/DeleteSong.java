@@ -43,7 +43,7 @@ public class DeleteSong extends HttpServlet {
 				if(b==true)
 				{
 					System.out.println(" song is deleted");
-					response.sendRedirect("Admin.jsp");
+					response.sendRedirect("Showsong.jsp");
 					
 				}else
 				{

@@ -292,7 +292,7 @@ objsonglist=libraryDao.showAllSongs();
 									<%=	library.getSongTitle() %>
 									</td>
 								</tr>
-								<tr>
+							<tr>
 									<td>
 									<audio  controls>
 					                <source src="Assets/<%=library.getSongFile() %>" >
@@ -301,6 +301,7 @@ objsonglist=libraryDao.showAllSongs();
 								</tr>
 							</tbody>
 						</table>
+
 
 
 					</td>
@@ -323,10 +324,7 @@ objsonglist=libraryDao.showAllSongs();
 	
 </body>
 </html>
-		
-			
-</body>
-</html>
+
 <script>
 var slideIndex = 0;
 showSlides();
@@ -345,7 +343,15 @@ function showSlides() {
   
   setTimeout(showSlides, 2500); // Change image every 2.5 seconds
 }
-</script>
 
+document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+            audios[i].pause();
+        }
+    }
+}, true);
+</script>
 
 

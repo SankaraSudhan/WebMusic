@@ -8,11 +8,12 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.webmusic.Dao.LibraryInterface;
 import com.webmusic.model.Library;
 import com.webmusic.util.ConnectionUtil;
 
 
-public class LibraryDao {
+public class LibraryDao implements LibraryInterface{
 
 	// Add songs by admin
 	public void insertLibrary(Library str3) throws ClassNotFoundException, SQLException {

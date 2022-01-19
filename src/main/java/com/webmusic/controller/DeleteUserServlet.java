@@ -45,7 +45,7 @@ public class DeleteUserServlet extends HttpServlet {
 
 		if(userdao!=null) {
 			System.out.println(" user is deleted");
-			response.sendRedirect("Admin.jsp");
+			response.sendRedirect("ShowUsers.jsp");
 		}else
 		{
 			response.getWriter().print("User is not deleted");

@@ -4,25 +4,18 @@
     <%@page import="java.util.List"%>
             <%@page import="com.webmusic.DaoImpl.LibraryDao"%>
  
-    
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Delete Song page</title>
+<title>All Users list page</title>
 <style>
-#allsongs table,th,tr,td{
-        border: 1px solid black;
-        border-collapse: collapse;
-         text-align: center;
-        padding: 10px;
-        }
-         #allsongs {    
-        position: absolute;
-        left:230px;
-        }
-        
-        ul {
+     
+      .navs{
+width: 1345px;
+}
+#navs ul {
             margin: 0;
             overflow: hidden;
             background-color:black;
@@ -30,24 +23,32 @@
             font-weight: bolder;
             padding:30px 150px;
             opacity: 0.5px;
-                position: absolute;
-            top: 0px;
-            left:0px;
-            width: 1065px;
         }
 
-        li {
+     #navs li {
             float: left;
             color: black;
         }
 
 
-#nav a {
+#navs a{
 color:white;
 text-decoration: none;
 }
-        
-        table.center{
+
+#allsongs table,th,tr,td{
+        border: 1px solid black;
+        border-collapse: collapse;
+         text-align: center;
+        padding: 10px;
+        }
+       body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+
+table.center{
 margin-left:300px;
 margin-right:auto;
 }
@@ -65,17 +66,20 @@ margin-right:auto;
 	outline: none;
 	background-color:transparent;
 	font-size: 18px;
+	color: white;
 }
 
 #search  button {
 	position: relative;
 	left: 0px;
-	background-color: DodgerBlue;
+	background-color: skyBlue;
 	border: none;
-	color: white;
+	color: black;
 	padding: 15px 32px;
 	text-align: center;
 	height: 38px;
+	font-family: bold;
+	font-size:15px;
 }
 
 ::placeholder {
@@ -85,34 +89,47 @@ margin-right:auto;
 	font-style: italic;
 }
 
-#allsongs table{
+#allsongs table,th,tr,td{
         border: 1px solid black;
         border-collapse: collapse;
         padding: 2px;
-        
+        text-decoration: none;
         }
         
   #allsongs {    
         position: absolute;
-        left:300px;
+        left:0px;
+        
         }
- #img {
+ #img{
 
         
  height: 80px;
  width: 80px;
  }   
- #logo {
+ #logo{
 width:130px;
 position: absolute;
 left:0px;
 top:-25px;
 }  
+     .gl:hover {
+            background: rgb(109, 216, 235);
+           
+        }
+          
+        
            
 </style>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
 </head>
 <body style="background: url(Assets/joanna-kosinska-dka5C8Ct2Fw-unsplash.jpg)">
-	<div id="nav">
+	<div id="navs">
 
         <ul type="none">
             
@@ -152,9 +169,10 @@ top:-25px;
 <div><img id="logo" src="Assets/MWlogoo.png"></div>
 
 		
-		
-		<table border="2" id="allsongs">
-			<h1><b><center>Manage songs</center></b></h1>
+		<br><br>
+		<!-- <table border="2" id="allsongs"> -->
+			<h2><b><center>Manage songs</center></b></h2>
+			<table class="table table-dark table-hover" id="allsongs">
 			<thead>
 				<tr>
 				   
@@ -195,7 +213,7 @@ top:-25px;
 					<td> <%=library.getAlbum()%></td>
 					<td> <%=library.getGenre()%></td>
 					<td> <%=library.getLanguage()%></td>
-					<td> <a href="deletesong?songTitle=<%=library.getSongTitle()%>" %>In Active</a>
+					<td> <a href="deletesong?songTitle=<%=library.getSongTitle()%>">In Active</a>
 					
 					
 					

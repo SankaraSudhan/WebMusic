@@ -83,11 +83,11 @@
         <table id="signuptable" style="border-spacing: 5px;">
             <tr>
                 <th><label for="name">First Name:</label></th>
-                <th><input type="text" name="FirstName" id="name" placeholder="Enter your first name" pattern = "[a-zA-Z]+{3,30}" required autofocus></th>
+                <th><input type="text" name="FirstName" id="name" placeholder="Enter your first name" pattern = "[a-zA-Z]{3,30}" required autofocus></th>
             </tr>
             <tr>
                 <th><label for="name">Last Name:</label></th>
-                <th><input type="text" name="LastName" id="name" placeholder="Enter your last name" pattern = "[a-zA-Z]+{3,30}" required ></th>
+                <th><input type="text" name="LastName" id="name" placeholder="Enter your last name" pattern = "[a-zA-Z]{3,30}" required ></th>
             </tr>
            
             <tr>
@@ -98,13 +98,13 @@
                     
            <tr>
                 <th><label for="name">User Name:</label></th>
-                <th><input type="text" name="UserName" id="name" placeholder="Enter user name" pattern ="[a-z]+{2,20}" required ></th>
+                <th><input type="text" name="UserName" id="name" placeholder="Enter user name" pattern ="[a-z]{2,20}" required ></th>
             </tr>
             
                                   
             <tr>
                 <th><label for="password">Password:</label></th>
-                <th><input type="password" name="UserPassword" id="password" placeholder="********" pattern = "[a-zA-Z0-9@#]+{5,8}" required ></th>
+                <th><input type="password" name="UserPassword" id="password" placeholder="********" pattern = "[a-zA-Z0-9@#]{5,8}" required ></th>
             </tr>
            
    <!--          <tr>
@@ -114,7 +114,7 @@
 
             <tr>
                 <th><label for="mobile">Mobile Number:</label></th>
-                <th><input type="number" name="MobileNumber" id="mobile" placeholder="Enter mobile number" pattern ="[0-9]+{10}" required></th>
+                <th><input type="number" name="MobileNumber" id="mobile" placeholder="Enter mobile number" pattern ="[0-9]{10}" required></th>
             </tr>         
         </table>
        

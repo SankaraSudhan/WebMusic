@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.webmusic.DaoImpl.LoginDao;
+import com.webmusic.exception.LoginException;
 import com.webmusic.model.Admin;
 import com.webmusic.model.UserInfo;
 
@@ -40,11 +41,12 @@ public class login extends HttpServlet{
 					System.out.println("admin");
 				    res.sendRedirect("Admin.jsp");
 				}
-				else
+				else if(admin==null)
 				{
 					System.out.println("user");
 					UserInfo user=loginDao.login(uname,password);
-					
+				
+					if(user!=null) {
 					if(user.getRole().equals("Premium"))
 					{
 						
@@ -52,25 +54,43 @@ public class login extends HttpServlet{
 					session.setAttribute("PremiumUser", user);
 					res.sendRedirect("home.jsp");
 					}
-					else
+					else 
 					{
 						HttpSession session=req.getSession();
 						session.setAttribute("currentUser", user);
 						res.sendRedirect("user.jsp");
 						
+					}}
+					else {
+						throw new LoginException();
 					}
+				
 					
+					
+				}
+				else {
+					throw new LoginException();
 				}
 				
 					
 				
 
 		}
+		
 				
 	
-	catch (Exception e) {
-			// TODO Auto-generated catch block
-		}
+	catch (LoginException e) {
+			HttpSession session=req.getSession();
+			session.setAttribute("errors", e.getMessage());
+			res.sendRedirect("login.jsp");
+			
+		} catch (ClassNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 		
 	}
 
